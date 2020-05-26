@@ -9,7 +9,7 @@ export class Home extends Component {
             <h1>Example Content</h1>
             <div>
                 <h3>Mission Statement</h3>
-                <p>TODO...</p>
+                <p>TODO... fill in here</p>
             </div>
             <div>
                 <h3>Reviews</h3>
