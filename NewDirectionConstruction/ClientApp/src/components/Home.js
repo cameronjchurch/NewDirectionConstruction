@@ -6,10 +6,29 @@ export class Home extends Component {
   render () {
     return (
       <div>
-            <h1>Testing Content</h1>
-            <h3>Mission Statement</h3>
-            <h3>Reviews</h3>
-            <h3>Vendors</h3>
+            <h1>Example Content</h1>
+            <div>
+                <h3>Mission Statement</h3>
+                <p>TODO...</p>
+            </div>
+            <div>
+                <h3>Reviews</h3>
+                <ul>
+                    <li>FB</li>
+                    <li>BBB</li>
+                    <li>Angie's list</li>
+                    <li>Home Advisor</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Vendors</h3>
+                <ul>
+                    <li>Pella</li>
+                    <li>Simonton</li>
+                    <li>Etc...</li>
+                </ul>
+            </div>
+
             {/*
                 <p>We can put what ever you want here, there, and wherever</p>
                 <ul>
