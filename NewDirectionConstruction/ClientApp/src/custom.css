@@ -28,6 +28,7 @@ body {
 }
 
 .footer {
+    padding: 3px;
     flex-shrink: 0;
     text-align: center;
 }
