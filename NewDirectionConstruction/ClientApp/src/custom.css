@@ -12,3 +12,23 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    padding: 3px;
+    flex-shrink: 0;
+    text-align: center;
+}
