@@ -5,8 +5,7 @@ export class Home extends Component {
 
     render() {
         return (
-            <div className="center">
-                <h1>Coming Soon!</h1>
+            <div className="center">                
                 <div className="construction" />
                 <h1>Contact</h1>
             </div>
