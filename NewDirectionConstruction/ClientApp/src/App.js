@@ -7,21 +7,24 @@ import { Counter } from './components/Counter';
 import { Contact } from './components/Contact';
 import { About } from './components/About';
 
+import { HomeTest } from './components/HomeTest'
+
 import './custom.css'
 
 export default class App extends Component {
-  static displayName = App.name;
+    static displayName = App.name;
 
-  render () {
-    return (
-      <Layout>
-            <Route exact path='/' component={Home} />
-            <Route path='/about' component={About} />
-        <Route path='/contact' component={Contact} />
-            {
-                //<Route path='/fetch-data' component={FetchData} />
-            }
-      </Layout>
-    );
-  }
+    render() {
+        return (
+            <Layout>
+                <Route exact path='/' component={Home} />
+                <Route path='/about' component={About} />
+                <Route path='/contact' component={Contact} />
+                {
+                    //<Route path='/fetch-data' component={FetchData} />
+                }
+                <Route path='/HomeTest' component={HomeTest} />
+            </Layout>
+        );
+    }
 }

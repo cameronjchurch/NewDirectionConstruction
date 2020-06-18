@@ -1,16 +1,16 @@
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
 }
 
 code {
-  color: #E01A76;
+    color: #E01A76;
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 html,
@@ -32,3 +32,15 @@ body {
     flex-shrink: 0;
     text-align: center;
 }
+
+.center {
+    text-align: center;
+}
+
+.construction {
+    height: 512px;
+    background-image: url('./images/underConstruction.jpg');
+    background-repeat: no-repeat;
+    background-size: contain; 
+}
+
