@@ -18,6 +18,14 @@ export class HomeTest extends Component {
                     </div>
                 </div>
                 <div>
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Windows</li>
+                        <li>Gutters</li>
+                        <li>Roofing</li>
+                    </ul>
+                </div>
+                <div>
                     <h3>Reviews</h3>
                     <ul>
                         <li>FB</li>
