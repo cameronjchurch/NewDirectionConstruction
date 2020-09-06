@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Carousel from 'react-bootstrap/Carousel';
 
 export class HomeTest extends Component {
     static displayName = HomeTest.name;
@@ -27,6 +28,17 @@ export class HomeTest extends Component {
                         <li>Simonton</li>
                         <li>Etc...</li>
                     </ul>
+                </div>
+
+                <div>
+                    <Carousel>
+                        <Carousel.Item>
+                            <p>Item 1</p>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <p>Item 2</p>
+                        </Carousel.Item>
+                    </Carousel>
                 </div>
 
                 {/*
