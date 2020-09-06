@@ -11,6 +11,11 @@ export class HomeTest extends Component {
                 <div>
                     <h3>Mission Statement</h3>
                     <p>TODO... fill in here</p>
+                    <div>
+                        <p>
+                            Providing superior service and the highest quality products to Jacksnville and surrounding areas.
+                        </p>
+                    </div>
                 </div>
                 <div>
                     <h3>Reviews</h3>
