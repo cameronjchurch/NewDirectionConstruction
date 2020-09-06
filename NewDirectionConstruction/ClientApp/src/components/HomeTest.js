@@ -23,6 +23,7 @@ export class HomeTest extends Component {
                         <li>Windows</li>
                         <li>Gutters</li>
                         <li>Roofing</li>
+                        <li>Exterior Paint & Siding</li>                        
                     </ul>
                 </div>
                 <div>
