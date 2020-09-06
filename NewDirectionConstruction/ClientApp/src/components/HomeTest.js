@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
-export class HomeTest extends Component {
-    static displayName = HomeTest.name;
+export class HomeTest extends Component {  
 
     render() {
         return (
