@@ -10,6 +10,8 @@ export class Products extends Component {
                     <h3>Vendors</h3>
                     <ul>
                         <li>Pella</li>
+                        <div>window styles...</div>
+                        <div>Brands</div>
                         <li>Simonton</li>
                         <li>Etc...</li>
                     </ul>
