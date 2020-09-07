@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, Nav, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
+import logo from '../images/logos11.png'
+
 
 export class NavMenu extends Component {
     static displayName = NavMenu.name;
@@ -24,18 +26,19 @@ export class NavMenu extends Component {
     render() {
         return (
             <header>
-                <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
+                <Navbar className="box-shadow" light>
                 <Nav tabs>
-                    <Container>
-                            <NavbarBrand href="/">New Direction Construction</NavbarBrand>
+                        <Container>
+                            <NavbarBrand href="/"><img src={logo} width="30"
+                                height="30" />{' '}New Direction Construction</NavbarBrand>
                             <NavItem>
                                 <NavLink tag={Link} to="/Products">Products</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/Services">Services</NavLink>
+                                <NavLink tag={Link} to="/Services">Services</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/Team">Team</NavLink>
+                                <NavLink tag={Link} to="/Team">Team</NavLink>
                             </NavItem>
                     </Container>
                     </Nav>
