@@ -29,17 +29,16 @@ export class NavMenu extends Component {
                 <Navbar className="box-shadow" light>
                 <Nav tabs>
                         <Container>
-                            <NavbarBrand href="/"><img src={logo} width="30"
-                                height="30" />{' '}New Direction Construction</NavbarBrand>
-                            <NavItem>
+                            <NavbarBrand href="/"><img src={logo} width="30" height="30" />{' '}New Direction Construction</NavbarBrand>
+                            {/*<NavItem>
                                 <NavLink tag={Link} to="/Products">Products</NavLink>
-                            </NavItem>
+                              </NavItem>                            
                             <NavItem>
                                 <NavLink tag={Link} to="/Services">Services</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink tag={Link} to="/Team">Team</NavLink>
-                            </NavItem>
+                            </NavItem>*/}
                     </Container>
                     </Nav>
                     </Navbar>

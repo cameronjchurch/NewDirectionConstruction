@@ -8,7 +8,7 @@ export class Services extends Component {
                 <h1>Services</h1>
                 <div>
                     <ul>
-                        <li>Windows</li>
+                        <li><a href="/Services/Windows">Windows</a></li>
                         <li>Gutters</li>
                         <li>Roofing</li>
                         <li>Exterior Paint & Siding</li>                        

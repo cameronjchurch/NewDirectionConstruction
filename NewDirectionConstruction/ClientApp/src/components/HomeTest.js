@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
+import before from '../images/downloadBefore.png';
+import SliderBefore from '../images/SliderBefore.png';
+import SliderAfter from '../images/SliderAfter.png';
+import SliderAfterOutside from '../images/SliderAfterOutside.png';
+import yardSign from '../images/YardSign.png';
+
 export class HomeTest extends Component {  
 
     render() {
@@ -46,10 +52,19 @@ export class HomeTest extends Component {
                 <div>
                     <Carousel>
                         <Carousel.Item>
-                            <p>Item 1</p>
+                            <img src={before} alt="Item 1" />
                         </Carousel.Item>
                         <Carousel.Item>
-                            <p>Item 2</p>
+                            <img src={SliderBefore} alt="Item 2" />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img src={SliderAfter} alt="Item 3" />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img src={SliderAfterOutside} alt="Item 4" />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img src={yardSign} alt="Item 5" />
                         </Carousel.Item>
                     </Carousel>
                 </div>
