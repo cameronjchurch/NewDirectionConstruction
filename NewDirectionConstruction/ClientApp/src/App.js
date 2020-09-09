@@ -7,10 +7,10 @@ import { HomeTest } from './components/HomeTest'
 import { Products } from './components/Services/Products';
 import { Services } from './components/Services';
 import { Team } from './components/Team';
-import { Windows } from './components/Services/Windows';
+import { Windows } from './components/Services/Windows/Windows';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
-import { Contact } from './components/Contact';
+
 import { About } from './components/About';
 
 
@@ -25,14 +25,14 @@ export default class App extends Component {
         return (
             <Layout>
                 <Route exact path='/' component={Home} />
-                <Route exact path='/HomeTest' component={HomeTest} />       
-                <Route exact path='/Services/Windows' component={Windows} />
+                <Route exact path='/HomeTest' component={HomeTest} />                       
                 <Route exact path='/Services' component={Services} />
+                <Route exact path='/Services/Windows' component={Windows} />
                 
                 <Route exact path='/Team' component={Team} />
 
                 <Route exact path='/about' component={About} />
-                <Route exact path='/contact' component={Contact} />
+                
                 {
                     //<Route path='/fetch-data' component={FetchData} />
                 }
