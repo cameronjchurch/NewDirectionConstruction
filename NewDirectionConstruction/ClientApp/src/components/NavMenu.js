@@ -26,22 +26,39 @@ export class NavMenu extends Component {
     render() {
         return (
             <header>
-                <Navbar className="box-shadow" light>
-                <Nav tabs>
+                <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
+                    <Nav>
                         <Container>
                             <NavbarBrand href="/"><img src={logo} width="30" height="30" />{' '}New Direction Construction</NavbarBrand>
+                            <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+                            <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
+                                <ul className="navbar-nav flex-grow">
+                                    <NavItem>
+                                        <NavLink tag={Link} className="text-dark" to="/Services/Windows">Windows</NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink tag={Link} className="text-dark" to="/Services/Gutters">Gutters</NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink tag={Link} className="text-dark" to="/Services/Roofing">Roofing</NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink tag={Link} className="text-dark" to="/Services/SidingAndPaint">Exterior Siding & Paint</NavLink>
+                                    </NavItem>
+                                </ul>
+                            </Collapse>
                             {/*<NavItem>
                                 <NavLink tag={Link} to="/Products">Products</NavLink>
                               </NavItem>                            
-                            <NavItem>
+                                                        <NavItem>
                                 <NavLink tag={Link} to="/Services">Services</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink tag={Link} to="/Team">Team</NavLink>
                             </NavItem>*/}
-                    </Container>
+                        </Container>
                     </Nav>
-                    </Navbar>
+                </Navbar>
 
                 {/*
                 //<Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>

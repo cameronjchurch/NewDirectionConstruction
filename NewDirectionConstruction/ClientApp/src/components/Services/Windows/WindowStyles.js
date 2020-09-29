@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 
-import doubleHung from '../../../images/windowStyles/Double-Hung-3.jpg';
-import singleHung from '../../../images/windowStyles/Single-Hung-Window1.jpg';
-import sliderWindow from '../../../images/windowStyles/Slider-Window.jpg';
-import casementWindow from '../../../images/windowStyles/Casement-Window.jpg';
-import awningWindow from '../../../images/windowStyles/Awning-Window1a.jpg';
-import bayWindow from '../../../images/windowStyles/Bay-Window1.jpg';
-import pictureWindow from '../../../images/windowStyles/Picture-Window-2.jpg';
-import geometricWindow from '../../../images/windowStyles/Geometric-Window.jpg';
-import gardenWindow from '../../../images/windowStyles/Garden-Window3.jpg';
+import DoubleHungWindow from './Styles/DoubleHungWindow';
+import SingleHungWindow from './Styles/SingleHungWindow';
+import SlidingWindow from './Styles/SlidingWindow';
+import CasementWindow from './Styles/CasementWindow';
+import AwningWindow from './Styles/AwningWindow';
+import BayWindow from './Styles/BayWindow';
+import PictureWindow from './Styles/PictureWindow';
+import GeometricWindow from './Styles/GeometricWindow';
+
+//import gardenWindow from '../../../images/windowStyles/Garden-Window3.jpg';
 
 export class WindowStyles extends Component {
 
@@ -18,67 +19,50 @@ export class WindowStyles extends Component {
             <div>
                 <Container>
                     <Row>
-                        <h3>Window Styles</h3>
+                        <Col>
+                            <h3 className="center">Window Styles</h3>
+                        </Col>
                     </Row>
                     <Row>
-                        <Col>
-                            <h4>Double Hung Windows</h4>
-                            <div>
-                                <img src={doubleHung} width="150" height="150" />
-                            </div>
+                        <Col>                            
+                            <DoubleHungWindow />
                         </Col>
                         <Col>
-                            <h4>Single Hung Windows</h4>
-                            <div>
-                                <img src={singleHung} width="150" height="150" />
-                            </div>
+                            <SingleHungWindow />
                         </Col>
                         <Col>
-                            <h4>Slider Windows</h4>
-                            <div>
-                                <img src={sliderWindow} width="150" height="150" />
-                            </div>
+                            <SlidingWindow />
+                        </Col>
+                        <Col>
+                            <PictureWindow />
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <h4>Casement Windows</h4>
-                            <div>
-                                <img src={casementWindow} width="150" height="150" />
-                            </div>
+                            <CasementWindow />
                         </Col>
                         <Col>
-                            <h4>Awning Windows</h4>
-                            <div>
-                                <img src={awningWindow} width="150" height="150" />
-                            </div>
+                            <AwningWindow />
                         </Col>
                         <Col>
-                            <h4>Bay or Bow Windows</h4>
-                            <div>
-                                <img src={bayWindow} width="150" height="150" />
-                            </div>
+                            <BayWindow />
+                        </Col>
+                        <Col>
+                            <GeometricWindow />
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
-                            <h4>Picture Windows</h4>
-                            <div>
-                                <img src={pictureWindow} width="150" height="150" />
-                            </div>
-                        </Col>
-                        <Col>
-                            <h4>Geometric Windows</h4>
-                            <div>
-                                <img src={geometricWindow} width="150" height="150" />
-                            </div>
-                        </Col>
-                        <Col>
+
+
+                        {
+                        /*<Col>
                             <h4>Garden Windows</h4>
                             <div>
                                 <img src={gardenWindow} width="150" height="150" />
                             </div>
                         </Col>
+                        */
+                        }
                     </Row>
                 </Container>
             </div>

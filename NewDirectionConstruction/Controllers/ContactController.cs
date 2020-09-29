@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -35,10 +36,15 @@ namespace NewDirectionConstruction.Controllers
             var apiKey = @"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";
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress(contactEmail, contactName);
-            var subject = @"Test email from NDC site";
-            var to = new EmailAddress("4xhelp@gmail.com");
-            var htmlContent = $@"<p>{contactMessage}</p>";
-            var message = MailHelper.CreateSingleEmail(from, to, subject, contactMessage, htmlContent);
+            var subject = @"LEAD! Customer email";
+
+            var to = new List<EmailAddress> { new EmailAddress("4xhelp@gmail.com"), new EmailAddress("cameron.j.church@gmail.com") };
+
+            //var to = new EmailAddress("4xhelp@gmail.com");
+            //var to = new EmailAddress("cameron.j.church@gmail.com");
+
+            var htmlContent = $@"<p>{contactMessage}</p><b>Phone: {contactPhone}</b>";
+            var message = MailHelper.CreateSingleEmailToMultipleRecipients(from, to, subject, contactMessage, htmlContent);
 
             var response = await client.SendEmailAsync(message);
 
