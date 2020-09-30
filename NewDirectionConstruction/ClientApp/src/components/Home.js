@@ -15,10 +15,10 @@ export class Home extends Component {
             <div>
                 <h1>About Us</h1>
                 <p>
-                    We are a locally owned and operated company that values honesty and integrity,
-                    and treats your home as if it were our own. We specialize in Window Installs, Door Installs, and Siding projects.
-                    Our services are customized to the individual project, paying close attention to the details of each project that we're involved with.
-                    We look forward to building long-term relationships with our clients and guarantee your satisfaction!
+                    At New Direction Construction, we offer residential remodeling with master consultants providing one off designs to create the right opportunity for each client on their budget. 
+                    We have partnered with multiple manufacturers to create a shopping experience unlike anything available on the market, schedule a consultation today to feel and see the difference between shopping versus being sold. 
+                    We are now offering free consultations for window and door replacement, siding, gutters and exterior painting. 
+                    We look forward to assisting you with your project!
                     </p>
 
                 <div>

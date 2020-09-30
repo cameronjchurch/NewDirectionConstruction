@@ -10,7 +10,7 @@ export class Windows extends Component {
             <div>
                 <h1>Windows</h1>
 
-                <h2 className="center">Vinal Windows</h2>
+                <h2 className="center">Vinyl Windows</h2>
                 <p>Explore our selection of high-quality vinyl replacement windows & patio doors to find the best fit.
                 Improve the energy efficiency of your home by ordering your windows and patio doors to meet ENERGY STAR&reg;
                 guidelines for where you live. We offer endless customization options from neutral and dark bold colors to woodgrain
