@@ -44,3 +44,8 @@ body {
     background-size: contain; 
 }
 
+.designCenter {
+    background-image: url('./images/design center background.jpg');
+    background-repeat: no-repeat;
+    /*background-size: contain;*/
+}
