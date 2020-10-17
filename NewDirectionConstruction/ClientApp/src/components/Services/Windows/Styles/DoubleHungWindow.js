@@ -8,9 +8,9 @@ const DoubleHungWindow = (props) => {
     const toggle = () => setPopoverOpen(!popoverOpen);
 
     return (
-        <div>
+        <div id="doubleHungWindow" className="pointer">
             <h4>Double Hung Windows</h4>
-            <img src={doubleHung} id="doubleHungWindow" width="150" height="150" />
+            <img src={doubleHung} width="150" height="150" />
             <Popover placement="bottom" isOpen={popoverOpen} target="doubleHungWindow" toggle={toggle}>
                 <PopoverHeader>DOUBLE-HUNG WINDOWS</PopoverHeader>
                 <PopoverBody>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col, Container } from 'reactstrap';
 
 import DoubleHungWindow from './Styles/DoubleHungWindow';
 import SingleHungWindow from './Styles/SingleHungWindow';
@@ -9,8 +9,6 @@ import AwningWindow from './Styles/AwningWindow';
 import BayWindow from './Styles/BayWindow';
 import PictureWindow from './Styles/PictureWindow';
 import GeometricWindow from './Styles/GeometricWindow';
-
-//import gardenWindow from '../../../images/windowStyles/Garden-Window3.jpg';
 
 export class WindowStyles extends Component {
 
@@ -24,45 +22,32 @@ export class WindowStyles extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col>                            
+                        <Col xs="12" sm="6" md="3">                            
                             <DoubleHungWindow />
                         </Col>
-                        <Col>
+                        <Col xs="12" sm="6" md="3">
                             <SingleHungWindow />
                         </Col>
-                        <Col>
+                        <Col xs="12" sm="6" md="3">
                             <SlidingWindow />
                         </Col>
-                        <Col>
+                        <Col xs="12" sm="6" md="3">
                             <PictureWindow />
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
+                        <Col xs="12" sm="6" md="3"> 
                             <CasementWindow />
                         </Col>
-                        <Col>
+                        <Col xs="12" sm="6" md="3">
                             <AwningWindow />
                         </Col>
-                        <Col>
+                        <Col xs="12" sm="6" md="3">
                             <BayWindow />
                         </Col>
-                        <Col>
+                        <Col xs="12" sm="6" md="3">
                             <GeometricWindow />
                         </Col>
-                    </Row>
-                    <Row>
-
-
-                        {
-                        /*<Col>
-                            <h4>Garden Windows</h4>
-                            <div>
-                                <img src={gardenWindow} width="150" height="150" />
-                            </div>
-                        </Col>
-                        */
-                        }
                     </Row>
                 </Container>
             </div>

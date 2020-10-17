@@ -41,7 +41,7 @@ const Contact = (props) => {
     }
 
     return (
-        <div className="designCenter">
+        <div>
             <Form onSubmit={postContactInfo}>
                 <FormGroup>
                     <Label for="customerName">Name</Label>

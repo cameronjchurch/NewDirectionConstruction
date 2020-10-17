@@ -8,9 +8,9 @@ const SlidingWindow = (props) => {
     const toggle = () => setPopoverOpen(!popoverOpen);
 
     return (
-        <div>
+        <div id="sliderWindow" className="pointer">
             <h4>Sliding Windows</h4>
-            <img src={sliderWindow} id="sliderWindow" width="150" height="150" />
+            <img src={sliderWindow} width="150" height="150" />
             <Popover placement="bottom" isOpen={popoverOpen} target="sliderWindow" toggle={toggle}>
                 <PopoverHeader>SLIDING WINDOWS</PopoverHeader>
                 <PopoverBody>

@@ -8,9 +8,9 @@ const CasementWindow = (props) => {
     const toggle = () => setPopoverOpen(!popoverOpen);
 
     return (
-        <div>
+        <div id="casementWindow" className="pointer">
             <h4>Casement Windows</h4>
-            <img src={casementWindow} id="casementWindow" width="150" height="150" />
+            <img src={casementWindow} width="150" height="150" />
             <Popover placement="bottom" isOpen={popoverOpen} target="casementWindow" toggle={toggle}>
                 <PopoverHeader>CASEMENT WINDOWS</PopoverHeader>
                 <PopoverBody>

@@ -8,9 +8,9 @@ const AwningWindow = (props) => {
     const toggle = () => setPopoverOpen(!popoverOpen);
 
     return (
-        <div>
+        <div id="awningWindow" className="pointer">
             <h4>Awning Windows</h4>
-            <img src={awningWindow} id="awningWindow" width="150" height="150" />
+            <img src={awningWindow} width="150" height="150" />
             <Popover placement="bottom" isOpen={popoverOpen} target="awningWindow" toggle={toggle}>
                 <PopoverHeader>AWNING WINDOWS</PopoverHeader>
                 <PopoverBody>

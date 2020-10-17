@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+import { Carousel } from 'reactstrap';
 import Contact from './Common/Contact';
 
 import before from '../images/downloadBefore.png';

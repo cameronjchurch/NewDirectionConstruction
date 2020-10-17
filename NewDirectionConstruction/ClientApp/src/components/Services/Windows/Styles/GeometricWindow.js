@@ -8,9 +8,9 @@ const GeometricWindow = (props) => {
     const toggle = () => setPopoverOpen(!popoverOpen);
 
     return (
-        <div>
+        <div id="geometricWindow" className="pointer">
             <h4>Geometric Windows</h4>
-            <img src={geometricWindow} id="geometricWindow" width="150" height="150" />
+            <img src={geometricWindow} width="150" height="150" />
             <Popover placement="bottom" isOpen={popoverOpen} target="geometricWindow" toggle={toggle}>
                 <PopoverHeader>GEOMETRIC WINDOWS</PopoverHeader>
                 <PopoverBody>

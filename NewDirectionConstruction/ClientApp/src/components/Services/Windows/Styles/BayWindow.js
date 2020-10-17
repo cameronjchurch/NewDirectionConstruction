@@ -8,9 +8,9 @@ const BayWindow = (props) => {
     const toggle = () => setPopoverOpen(!popoverOpen);
 
     return (
-        <div>
+        <div id="bayWindow" className="pointer">
             <h4>Bay and Bow Windows</h4>
-            <img src={bayWindow} id="bayWindow" width="150" height="150" />
+            <img src={bayWindow} width="150" height="150" />
             <Popover placement="bottom" isOpen={popoverOpen} target="bayWindow" toggle={toggle}>
                 <PopoverHeader>BAY and BOW WINDOWS</PopoverHeader>
                 <PopoverBody>

@@ -49,3 +49,7 @@ body {
     background-repeat: no-repeat;
     /*background-size: contain;*/
 }
+
+.pointer {
+    cursor: pointer;
+}
