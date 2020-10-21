@@ -12,7 +12,7 @@ import pella350 from '../../../images/windowBrochures/3- pella 350.pdf';
 
 import simontonPro from '../../../images/windowBrochures/ProFinish-Master-Contractor-Builder-Brochure.pdf';
 import simonton5050 from '../../../images/windowBrochures/Simonton_Reflections_5050_Brochure.pdf';
-import simonton9800 from '../../../images/windowBrochures/Impressions-9800-Brochure.pdf';
+import simonton5500 from '../../../images/windowBrochures/Simonton_Reflections_5500_Style_Guide.pdf';
 import simontonStormBreaker from '../../../images/windowBrochures/StormBreaker-Plus-Double-Hung-Flier.pdf';
 
 import cws610 from '../../../images/windowBrochures/CWS Aria-Series-610-Single-Hung.pdf';
@@ -54,7 +54,7 @@ export class WindowBrands extends Component {
                             <ListGroup flush>
                                 <ListGroupItem tag="a" href={simontonPro} target="_blank">Pro Series</ListGroupItem>
                                 <ListGroupItem tag="a" href={simonton5050} target="_blank">5050 Series</ListGroupItem>
-                                <ListGroupItem tag="a" href={simonton9800} target="_blank">9800 Series</ListGroupItem>
+                                <ListGroupItem tag="a" href={simonton5500} target="_blank">5500 Series</ListGroupItem>
                                 <ListGroupItem tag="a" href={simontonStormBreaker} target="_blank">Storm Breaker</ListGroupItem>
                             </ListGroup>
                         </Col>
