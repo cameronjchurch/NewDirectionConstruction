@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, Nav, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import './NavMenu.css';
 import logo from '../images/logos11.png'
 
@@ -37,13 +38,23 @@ export class NavMenu extends Component {
                                         <NavLink tag={Link} className="text-dark" to="/Services/Windows">Windows</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink tag={Link} className="text-dark" to="/Services/Gutters">Gutters</NavLink>
+                                        {
+                                            //<NavLink tag={Link} className="text-dark" to="/Services/Gutters">Gutters</NavLink>
+                                        }
+                                        <NavLink tag={HashLink} className="text-dark" as={HashLink} to="/Services/AdditionalServices#Gutters">Gutters</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink tag={Link} className="text-dark" to="/Services/Roofing">Roofing</NavLink>
+                                        {
+                                            //<NavLink tag={Link} className="text-dark" to="/Services/Roofing">Roofing</NavLink>
+                                        }
+                                        <NavLink tag={HashLink} className="text-dark" as={HashLink} to="/Services/AdditionalServcices#Roofing">Roofing</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink tag={Link} className="text-dark" to="/Services/SidingAndPaint">Exterior Siding & Paint</NavLink>
+                                        {
+                                            //<NavLink tag={Link} className="text-dark" to="/Services/SidingAndPaint">Exterior Siding & Paint</NavLink>
+                                        }
+                                        <NavLink tag={HashLink} className="text-dark" as={HashLink} to="/Services/AdditionalServices#SidingAndPaint">Exterior Siding & Paint</NavLink>
+
                                     </NavItem>
                                 </ul>
                             </Collapse>
