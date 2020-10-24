@@ -5,7 +5,7 @@ import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { Services } from './components/Services';
 import { Team } from './components/Team';
-import { Windows } from './components/Services/Windows/Windows';
+import Windows from './components/Services/Windows/Windows';
 //import { Gutters } from './components/Services/Gutters/Gutters';
 //import { Roofing } from './components/Services/Roofing/Roofing';
 //import { SidingAndPaint } from './components/Services/SidingAndPaint/SidingAndPaint';
@@ -27,7 +27,7 @@ export default class App extends Component {
                 <Switch>
                     <Route exact path='/' component={Home} />
                     <Route exact path='/Services' component={Services} />
-                    <Route exact path='/Services/Windows' component={Windows} />
+                    <Route path='/Services/Windows/Windows' component={Windows} />
 
                     <Route exact path='/Team' component={Team} />
                     <Route exact path='/about' component={About} />

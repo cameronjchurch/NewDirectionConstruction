@@ -58,7 +58,7 @@ const Contact = (props) => {
                 <FormGroup>
                     <Label for="customerConcern">Message</Label>
                     <Input type="textarea" name="customerMessage" id="customerMessage" placeholder="Message" value={customerMessage} onChange={handleCustomerMessageChange} />
-                    <FormText>Please let us know what you are interested in! For immediate inquires please call: <b>904 907 4474</b></FormText>
+                    <FormText>Please let us know what you are interested in! For immediate inquires please call: <a href="tel:1-904-907-4474" className="text-dark"><b>904 907 4474</b></a></FormText>
                 </FormGroup>
                 <Button>Submit</Button>
             </Form>

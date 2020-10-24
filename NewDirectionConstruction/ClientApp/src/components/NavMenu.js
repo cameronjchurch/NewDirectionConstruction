@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, Nav, NavLink } from 'reactstrap';
+import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, Nav, NavLink, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import './NavMenu.css';
@@ -26,81 +26,48 @@ export class NavMenu extends Component {
 
     render() {
         return (
-            <header>
-                <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
-                    <Nav>
-                        <Container>
-                            <NavbarBrand href="/"><img src={logo} width="30" height="30" />{' '}New Direction Construction</NavbarBrand>
-                            <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-                            <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-                                <ul className="navbar-nav flex-grow">
-                                    <NavItem>
-                                        <NavLink tag={Link} className="text-dark" to="/Services/Windows">Windows</NavLink>
-                                    </NavItem>
-                                    <NavItem>
-                                        {
-                                            //<NavLink tag={Link} className="text-dark" to="/Services/Gutters">Gutters</NavLink>
-                                        }
-                                        <NavLink tag={HashLink} className="text-dark" as={HashLink} to="/Services/AdditionalServices#Gutters">Gutters</NavLink>
-                                    </NavItem>
-                                    <NavItem>
-                                        {
-                                            //<NavLink tag={Link} className="text-dark" to="/Services/Roofing">Roofing</NavLink>
-                                        }
-                                        <NavLink tag={HashLink} className="text-dark" as={HashLink} to="/Services/AdditionalServcices#Roofing">Roofing</NavLink>
-                                    </NavItem>
-                                    <NavItem>
-                                        {
-                                            //<NavLink tag={Link} className="text-dark" to="/Services/SidingAndPaint">Exterior Siding & Paint</NavLink>
-                                        }
-                                        <NavLink tag={HashLink} className="text-dark" as={HashLink} to="/Services/AdditionalServices#SidingAndPaint">Exterior Siding & Paint</NavLink>
-
-                                    </NavItem>
-                                </ul>
-                            </Collapse>
-                            {/*<NavItem>
-                                <NavLink tag={Link} to="/Products">Products</NavLink>
-                              </NavItem>                            
-                                                        <NavItem>
-                                <NavLink tag={Link} to="/Services">Services</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink tag={Link} to="/Team">Team</NavLink>
-                            </NavItem>*/}
-                        </Container>
-                    </Nav>
+            <Container>
+                <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 header" dark fixed="top">
+                    <Col>
+                        <Row>
+                            <Col sm="7" md="8">
+                                <NavbarBrand tag={Link} to="/"><img src={logo} width="30" height="30" />{' '}New Direction Construction</NavbarBrand>
+                            </Col>
+                            <Col sm="5" md="4">
+                                <Row>
+                                    <div className="text-light text-right" style={{ width: "93%" }}>Call Today For A Free Estimate</div>
+                                </Row>
+                                <Row>
+                                    <div className="text-right" style={{ width: "93%" }}><a href="tel:1-904-907-4474" className="text-light"><b>904 907 4474</b></a></div>
+                                </Row>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Nav>
+                                <Container>
+                                    <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+                                    <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
+                                        <ul className="navbar-nav flex-grow">
+                                            <NavItem>
+                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/Windows/Windows#Windows" scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Windows</NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/AdditionalServices#Gutters" scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Gutters</NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/AdditionalServices#Roofing" scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -150) }}>Roofing</NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/AdditionalServices#SidingAndPaint" scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -5) }}>Exterior Siding & Paint</NavLink>
+                                            </NavItem>
+                                        </ul>
+                                    </Collapse>
+                                </Container>
+                            </Nav>
+                        </Row>
+                    </Col>
                 </Navbar>
-
-                {/*
-                //<Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
-                //    <Container>
-                //        <NavbarBrand tag={Link} to="/">New Direction Construction</NavbarBrand>
-                //        <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-                //        <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-                //            <ul className="navbar-nav flex-grow">
-                //                <NavItem>
-                //                    <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
-                //                </NavItem>
-                //                {/*
-                //                <NavItem>
-                //                    <NavLink tag={Link} className="text-dark" to="/about">About</NavLink>
-                //                </NavItem>
-                //                <NavItem>
-                //                    <NavLink tag={Link} className="text-dark" to="/contact">Contact</NavLink>
-                //                </NavItem>
-                //                }
-                //                {/*<NavItem>
-                //  <NavLink tag={Link} className="text-dark" to="/counter">Contact</NavLink>
-                //</NavItem>
-                //            <NavItem>
-                //  <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch data</NavLink>
-                //</NavItem>}
-                //            </ul>
-                //        </Collapse>
-                //    </Container>
-                //</Navbar>
-            */}
-            </header>
+            </Container>
         );
     }
 }
