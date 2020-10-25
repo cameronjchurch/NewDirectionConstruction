@@ -27,7 +27,7 @@ export class NavMenu extends Component {
     render() {
         return (
             <Container>
-                <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 header" dark fixed="top">
+                <Navbar className="navbar-expand-sm navbar-toggleable-sm box-shadow mb-3 header" dark fixed="top">
                     <Col>
                         <Row>
                             <Col sm="7" md="8">
@@ -58,7 +58,7 @@ export class NavMenu extends Component {
                                                 <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/AdditionalServices#Roofing" scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -150) }}>Roofing</NavLink>
                                             </NavItem>
                                             <NavItem>
-                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/AdditionalServices#SidingAndPaint" scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -5) }}>Exterior Siding & Paint</NavLink>
+                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/AdditionalServices#SidingAndPaint" scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -3) }}>Exterior Siding & Paint</NavLink>
                                             </NavItem>
                                         </ul>
                                     </Collapse>

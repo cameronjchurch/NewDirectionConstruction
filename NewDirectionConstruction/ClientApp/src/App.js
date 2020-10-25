@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-//import { Route } from 'react-router';
 import { Switch, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
-import { Home } from './components/Home';
+import Home from './components/Home';
 import { Services } from './components/Services';
 import { Team } from './components/Team';
 import Windows from './components/Services/Windows/Windows';
@@ -10,9 +9,6 @@ import Windows from './components/Services/Windows/Windows';
 //import { Roofing } from './components/Services/Roofing/Roofing';
 //import { SidingAndPaint } from './components/Services/SidingAndPaint/SidingAndPaint';
 import AdditionalServices from './components/Services/AdditionalServices';
-
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
 
 import { About } from './components/About';
 
@@ -33,14 +29,6 @@ export default class App extends Component {
                     <Route exact path='/about' component={About} />
                     <Route component={AdditionalServices} />
                 </Switch>
-                {
-                    //<Route exact path='/Services/Roofing' component={Roofing} />
-                    //<Route exact path='/Services/SidingAndPaint' component={SidingAndPaint} />
-                    //<Route exact path='/Services/Gutters' component={Gutters} />
-
-                    //<Route path='/fetch-data' component={FetchData} />
-                }
-
             </Layout>
         );
     }

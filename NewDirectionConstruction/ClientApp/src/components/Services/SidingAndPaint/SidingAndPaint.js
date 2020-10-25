@@ -5,9 +5,8 @@ const SidingAndPaint = (props) => {
     return (
         <div>
             <h1>Exterior Siding and Paint</h1>
-            <br /><br />
-            <div>
-                <h3>Contact Us About Your Needs</h3>
+            <br />
+            <div>                
                 <Contact />
             </div>
         </div>

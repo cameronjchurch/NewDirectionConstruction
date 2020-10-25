@@ -41,24 +41,27 @@ const Contact = (props) => {
     }
 
     return (
-        <div>
+        <div style={{ backgroundColor: "#808080", opacity: "0.7", padding: "17px", borderRadius: "17px", marginTop: "31px" }}>
+            <h3 style={{ color: "whitesmoke" }}>Please Tells Us About Your Needs</h3>
             <Form onSubmit={postContactInfo}>
                 <FormGroup>
-                    <Label for="customerName">Name</Label>
+                    <Label style={{ color: "whitesmoke" }} for="customerName">Name</Label>
                     <Input type="text" name="customerName" id="customerName" placeholder="Name" value={customerName} onChange={handleCustomerNameChange} />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="customerPhone">Phone Number</Label>
+                    <Label style={{ color: "whitesmoke" }} for="customerPhone">Phone Number</Label>
                     <Input type="tel" name="customerPhone" id="customerPhone" placeholder="Phone" value={customerPhone} onChange={handleCustomerPhoneChange} />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="customerEmail">Email</Label>
+                    <Label style={{ color: "whitesmoke" }} for="customerEmail">Email</Label>
                     <Input type="email" name="customerEmail" id="customerEmail" placeholder="Email" value={customerEmail} onChange={handleCustomerEmailChange} />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="customerConcern">Message</Label>
+                    <Label style={{ color: "whitesmoke" }} for="customerConcern">Message</Label>
                     <Input type="textarea" name="customerMessage" id="customerMessage" placeholder="Message" value={customerMessage} onChange={handleCustomerMessageChange} />
-                    <FormText>Please let us know what you are interested in! For immediate inquires please call: <a href="tel:1-904-907-4474" className="text-dark"><b>904 907 4474</b></a></FormText>
+                    <FormText>
+                        <section style={{ color: "whitesmoke" }}>Please let us know what you are interested in! For immediate inquires please call: <a href="tel:1-904-907-4474" style={{ color: "whitesmoke" }} ><b>904 907 4474</b></a></section>
+                    </FormText>
                 </FormGroup>
                 <Button>Submit</Button>
             </Form>
