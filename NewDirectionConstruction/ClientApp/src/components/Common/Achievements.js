@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
 import { Carousel, CarouselControl, CarouselItem, Container, Row, Col } from 'reactstrap';
 
-import oneYear from '../../images/achievements/1year.PNG';
+import oneYear from '../../images/achievements/1year.png';
 import twentyReviews from '../../images/achievements/20reviews.png';
 import boha2019 from '../../images/achievements/boha-2019.png';
 import elite from '../../images/achievements/elite.png';
