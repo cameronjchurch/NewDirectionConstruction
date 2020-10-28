@@ -49,7 +49,7 @@ export class NavMenu extends Component {
                                     <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
                                         <ul className="navbar-nav flex-grow">
                                             <NavItem>
-                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/Windows/Windows#Windows" scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Windows</NavLink>
+                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/Windows#Windows" scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Windows</NavLink>
                                             </NavItem>
                                             <NavItem>
                                                 <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/AdditionalServices#Gutters" scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Gutters</NavLink>

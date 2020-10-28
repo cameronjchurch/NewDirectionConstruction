@@ -14,6 +14,8 @@ import { About } from './components/About';
 
 import './custom.css'
 
+import withTracker from './withTracker';
+
 export default class App extends Component {
     static displayName = App.name;
 
@@ -21,13 +23,13 @@ export default class App extends Component {
         return (
             <Layout>
                 <Switch>
-                    <Route exact path='/' component={Home} />
-                    <Route exact path='/Services' component={Services} />
-                    <Route path='/Services/Windows/Windows' component={Windows} />
+                    <Route exact path='/' component={withTracker(Home)} />
+                    <Route exact path='/Services' component={withTracker(Services)} />
+                    <Route path='/Services/Windows' component={withTracker(Windows)} />
 
-                    <Route exact path='/Team' component={Team} />
-                    <Route exact path='/about' component={About} />
-                    <Route component={AdditionalServices} />
+                    <Route exact path='/Team' component={withTracker(Team)} />
+                    <Route exact path='/about' component={withTracker(About)} />
+                    <Route component={withTracker(AdditionalServices)} />
                 </Switch>
             </Layout>
         );
