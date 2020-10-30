@@ -4,11 +4,12 @@
 
 import React, { Component } from 'react';
 
-export default function withTracker(WrappedComponent, options = {}) {
+export default function withTracker(WrappedComponent, PageTitle) {
     const trackPage = (page) => {
         window.gtag('send', 'page_view', {
             page_location: window.location.href,
-            page_path: window.location.pathname            
+            page_path: window.location.pathname,
+            page_title: PageTitle
         });
     };
 

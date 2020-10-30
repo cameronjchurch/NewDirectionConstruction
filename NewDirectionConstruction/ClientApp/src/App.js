@@ -10,6 +10,8 @@ import Windows from './components/Services/Windows/Windows';
 //import { SidingAndPaint } from './components/Services/SidingAndPaint/SidingAndPaint';
 import AdditionalServices from './components/Services/AdditionalServices';
 
+import { HomeUnderConstruction } from './components/HomeUnderConstruction';
+
 import { About } from './components/About';
 
 import './custom.css'
@@ -23,13 +25,17 @@ export default class App extends Component {
         return (
             <Layout>
                 <Switch>
-                    <Route exact path='/' component={withTracker(Home)} />
-                    <Route exact path='/Services' component={withTracker(Services)} />
-                    <Route path='/Services/Windows' component={withTracker(Windows)} />
+                    {
+                        //<Route exact path='/' component={withTracker(HomeUnderConstruction, 'Home')} />
+                    }
+                    <Route exact path='/' component={withTracker(Home, 'Home')} />
+                    
+                    <Route exact path='/Services' component={withTracker(Services, 'Services')} />
+                    <Route path='/Services/Windows' component={withTracker(Windows, 'Windows')} />
 
-                    <Route exact path='/Team' component={withTracker(Team)} />
-                    <Route exact path='/about' component={withTracker(About)} />
-                    <Route component={withTracker(AdditionalServices)} />
+                    <Route exact path='/Team' component={withTracker(Team, 'Team')} />
+                    <Route exact path='/about' component={withTracker(About, 'About')} />
+                    <Route component={withTracker(AdditionalServices, 'AdditionalServices')} />
                 </Switch>
             </Layout>
         );
