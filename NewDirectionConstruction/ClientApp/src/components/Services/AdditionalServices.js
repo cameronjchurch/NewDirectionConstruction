@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Gutters from './Gutters/Gutters';
 import Roofing from './Roofing/Roofing';
 import SidingAndPaint from './SidingAndPaint/SidingAndPaint';
 
-const AdditionalServices = (props) => {
-    
+export class AdditionalServices extends Component {
+    componentDidMount() {
+        document.title = 'AdditionalServices';
+    }
+    render() {
         return (
             <div>
                 <h1>Additional Services</h1>
@@ -19,7 +22,5 @@ const AdditionalServices = (props) => {
                 </section>
             </div>
         );
-
+    }
 }
-
-export default AdditionalServices;
