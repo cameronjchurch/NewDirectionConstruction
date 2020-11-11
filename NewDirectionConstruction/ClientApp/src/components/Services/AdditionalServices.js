@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Gutters from './Gutters/Gutters';
 import Roofing from './Roofing/Roofing';
 import SidingAndPaint from './SidingAndPaint/SidingAndPaint';
+import Contact from '../Common/Contact';
 
 export class AdditionalServices extends Component {
     componentDidMount() {
@@ -11,6 +12,7 @@ export class AdditionalServices extends Component {
         return (
             <div>
                 <h1>Additional Services</h1>
+                <br/>
                 <section id="Gutters">
                     <Gutters />
                 </section>
@@ -20,6 +22,10 @@ export class AdditionalServices extends Component {
                 <section id="SidingAndPaint">
                     <SidingAndPaint />
                 </section>
+                <div>
+                    <h3>Shop Additional Services</h3>
+                    <Contact />
+                </div>
             </div>
         );
     }
