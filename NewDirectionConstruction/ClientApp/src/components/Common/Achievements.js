@@ -9,6 +9,13 @@ import soap from '../../images/achievements/soap.png';
 import toprated from '../../images/achievements/toprated.png';
 import bbb from '../../images/achievements/bbb.png';
 
+// big images
+import bestOf2019 from '../../images/achievements/New Direction best of award.png';
+import bbbBig from '../../images/achievements/bbbBig.png';
+import eliteBig from '../../images/achievements/eliteBig.png';
+import eliteBig2 from '../../images/achievements/eliteBig2.png';
+import topratedBig from '../../images/achievements/topratedBig.png';
+
 const items = [
     {
         src: oneYear,
@@ -26,25 +33,51 @@ const items = [
         key: 3
     },
     {
+        src: bestOf2019,
+        altText: "Best of 2019!",
+        key: 4
+    },
+    {
         src: elite,
         altText: "Elite Service!",
-        key: 4
+        key: 5
     },
     {
         src: soap,
         altText: "Screened & Approved!",
-        key: 5
+        key: 6
     },
     {
         src: toprated,
         altText: "Top Rated!",
-        key: 6
+        key: 7
     },
     {
         src: bbb,
         altText: "BBB A Rating!",
-        key: 7
-    }];
+        key: 8
+    },
+    {
+        src: bbbBig,
+        altText: "BBB A Rating!",
+        key: 9
+    },
+    {
+        src: eliteBig,
+        altText: "Elite Service!",
+        key: 10
+    },
+    {
+        src: topratedBig,
+        altText: "Top Rated!",
+        key: 11
+    },
+    {
+        src: eliteBig2,
+        altText: "Elite Service!",
+        key: 12
+    }
+];
 
 const Achievements = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);

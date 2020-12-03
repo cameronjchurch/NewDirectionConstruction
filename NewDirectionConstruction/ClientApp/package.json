@@ -18,7 +18,8 @@
     "reactstrap": "8.6.0",
     "rimraf": "^3.0.2",
     "react-background-slider": "2.0.0",
-    "react-multi-carousel": "2.5.5"
+    "react-photo-gallery": "8.0.0",
+    "react-images": "1.1.7"
   },
   "devDependencies": {
     "ajv": "^6.9.1",

@@ -9,6 +9,7 @@ import { Windows } from './components/Services/Windows/Windows';
 //import { Roofing } from './components/Services/Roofing/Roofing';
 //import { SidingAndPaint } from './components/Services/SidingAndPaint/SidingAndPaint';
 import { AdditionalServices } from './components/Services/AdditionalServices';
+import { Gallery } from './components/Services/Gallery/Gallery';
 
 import { HomeUnderConstruction } from './components/HomeUnderConstruction';
 
@@ -33,10 +34,12 @@ export default class App extends Component {
 
                     <Route exact path='/Services' component={withTracker(Services)} />
                     <Route path='/Services/Windows' component={withTracker(Windows)} />
+                    <Route path='/Services/Gallery' component={withTracker(Gallery)} />
 
                     <Route exact path='/Team' component={withTracker(Team)} />
                     <Route exact path='/about' component={withTracker(About)} />
                     <Route component={withTracker(AdditionalServices)} />
+                    
                 </Switch>
             </Layout>
         );
