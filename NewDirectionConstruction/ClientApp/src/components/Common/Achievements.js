@@ -1,6 +1,7 @@
 ﻿import React, { useState } from 'react';
 import { Carousel, CarouselControl, CarouselItem, Container, Row, Col } from 'reactstrap';
 
+/*
 import oneYear from '../../images/achievements/1year.png';
 import twentyReviews from '../../images/achievements/20reviews.png';
 import boha2019 from '../../images/achievements/boha-2019.png';
@@ -8,14 +9,16 @@ import elite from '../../images/achievements/elite.png';
 import soap from '../../images/achievements/soap.png';
 import toprated from '../../images/achievements/toprated.png';
 import bbb from '../../images/achievements/bbb.png';
+*/
 
 // big images
 import bestOf2019 from '../../images/achievements/New Direction best of award.png';
 import bbbBig from '../../images/achievements/bbbBig.png';
-import eliteBig from '../../images/achievements/eliteBig.png';
+//import eliteBig from '../../images/achievements/eliteBig.png';
 import eliteBig2 from '../../images/achievements/eliteBig2.png';
 import topratedBig from '../../images/achievements/topratedBig.png';
 
+/*
 const items = [
     {
         src: oneYear,
@@ -76,6 +79,30 @@ const items = [
         src: eliteBig2,
         altText: "Elite Service!",
         key: 12
+    }
+];
+*/
+
+const items = [    
+    {
+        src: bestOf2019,
+        altText: "Best of 2019!",
+        key: 1
+    },
+    {
+        src: bbbBig,
+        altText: "BBB A Rating!",
+        key: 2
+    },
+    {
+        src: topratedBig,
+        altText: "Top Rated!",
+        key: 3
+    },
+    {
+        src: eliteBig2,
+        altText: "Elite Service!",
+        key: 4
     }
 ];
 
