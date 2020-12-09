@@ -49,35 +49,39 @@ export class NavMenu extends Component {
                                 </Row>
                             </Col>
                         </Row>
-                        <Row>
-                            <Nav>
-                                <Container>
-                                    <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-                                    <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-                                        <ul className="navbar-nav flex-grow">
-                                            <NavItem>
-                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/#Home" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Home</NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/Windows#Windows" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Windows</NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/AdditionalServices#Gutters" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Gutters</NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/AdditionalServices#Roofing" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -150) }}>Roofing</NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/AdditionalServices#SidingAndPaint" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -3) }}>Exterior Siding & Paint</NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/Gallery#Gallery" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Gallery</NavLink>
-                                            </NavItem>
-                                        </ul>
-                                    </Collapse>
-                                </Container>
-                            </Nav>
+                        {
+                        /*
+                            <Row>
+                                <Nav>
+                                    <Container>
+                                        <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+                                        <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
+                                            <ul className="navbar-nav flex-grow">
+                                                <NavItem>
+                                                    <NavLink tag={HashLink} className="text-light" as={HashLink} to="/#Home" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Home</NavLink>
+                                                </NavItem>
+                                                <NavItem>
+                                                    <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/Windows#Windows" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Windows</NavLink>
+                                                </NavItem>
+                                                <NavItem>
+                                                    <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/AdditionalServices#Gutters" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Gutters</NavLink>
+                                                </NavItem>
+                                                <NavItem>
+                                                    <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/AdditionalServices#Roofing" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -150) }}>Roofing</NavLink>
+                                                </NavItem>
+                                                <NavItem>
+                                                    <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/AdditionalServices#SidingAndPaint" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -3) }}>Exterior Siding & Paint</NavLink>
+                                                </NavItem>
+                                                <NavItem>
+                                                    <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/Gallery#Gallery" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Gallery</NavLink>
+                                                </NavItem>
+                                            </ul>
+                                        </Collapse>
+                                    </Container>
+                                </Nav>
                         </Row>
+                        */
+                        }
                     </Col>
                 </Navbar>
             </Container>

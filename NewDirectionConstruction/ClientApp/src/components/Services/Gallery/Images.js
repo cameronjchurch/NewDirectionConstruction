@@ -52,12 +52,12 @@ const items = [
         height: 1,
         title: 'Window Install'
     },
-    {
-        src: image7,
-        width: 1,
-        height: 1,
-        title: 'Customer Review'
-    },
+    //{
+    //    src: image7,
+    //    width: 1,
+    //    height: 1,
+    //    title: 'Customer Review'
+    //},
     {
         src: image8,
         width: 1,
@@ -76,18 +76,18 @@ const items = [
         height: 1,
         title: 'New Bedroom Windows'
     },
-    {
-        src: image11,
-        width: 1,
-        height: 1,
-        title: 'Our Logo'
-    },
-    {
-        src: image12,
-        width: 1,
-        height: 1,
-        title: 'Thank You!'
-    }
+    //{
+    //    src: image11,
+    //    width: 1,
+    //    height: 1,
+    //    title: 'Our Logo'
+    //},
+    //{
+    //    src: image12,
+    //    width: 1,
+    //    height: 1,
+    //    title: 'Thank You!'
+    //}
 ];
 
 const Images = (props) => {

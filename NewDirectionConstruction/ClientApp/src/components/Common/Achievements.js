@@ -139,7 +139,7 @@ const Achievements = (props) => {
             <Row>
                 <Col xs="12" sm="2" md="2" />
                 <Col xs="12" sm="8" md="8">
-                    <div style={{ backgroundColor: "#808080", opacity: "0.7", padding: "17px", borderRadius: "17px", marginTop: "31px" }} className="center">
+                    <div style={{ backgroundColor: "#808080", opacity: "0.9", padding: "17px", borderRadius: "17px", marginTop: "31px" }} className="center">
                         <Carousel
                             activeIndex={activeIndex}
                             next={next}

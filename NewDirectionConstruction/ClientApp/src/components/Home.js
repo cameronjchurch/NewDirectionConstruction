@@ -23,12 +23,12 @@ export class Home extends Component {
                     <Container>
                         <Row>
                             <Col xs="12" sm="6" md="8">
-                                <div style={{ backgroundColor: "#808080", opacity: "0.7", padding: "17px", borderRadius: "17px", marginTop: "31px" }}>
-                                    <h1 style={{ color: "whitesmoke" }}>About Us</h1>
-                                    <p style={{ color: "whitesmoke" }}>
-                                        At New Direction Construction, we offer residential remodeling with master consultants providing one off designs to create the right opportunity for each client on their budget.
+                                <div style={{ backgroundColor: "#808080", opacity: "0.9", padding: "17px", borderRadius: "17px", marginTop: "31px" }}>
+                                    <h1 style={{ color: "white" }}>About Us</h1>
+                                    <p style={{ color: "white", fontSize: "17px" }}>
+                                        At New Direction Construction, we offer residential remodeling with master consultants providing one off designs to create the right opportunity for each client on their budget.<br /><br />
                                         We have partnered with multiple manufacturers to create a shopping experience unlike anything available on the market, schedule a consultation today to feel and see the difference between shopping versus being sold.
-                                        We are now offering free consultations for window and door replacement, siding, gutters and exterior painting.
+                                    We are now offering free consultations for window and door replacement, siding, gutters and exterior painting.<br /><br />
                                     We look forward to assisting you with your project!</p>
                                 </div>
                             </Col>
