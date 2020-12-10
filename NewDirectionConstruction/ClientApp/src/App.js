@@ -31,7 +31,7 @@ export default class App extends Component {
                         //<Route exact path='/' component={withTracker(Home)} />
                     }                    
 
-                    <Route exact path='/' component={withTracker(HomeUnderConstruction)} />
+                    <Route exact path='/' component={withTracker(Home)} />
 
                     <Route exact path='/Services' component={withTracker(Services)} />
                     <Route path='/Services/Windows' component={withTracker(Windows)} />

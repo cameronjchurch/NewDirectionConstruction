@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -34,7 +35,8 @@ namespace NewDirectionConstruction.Controllers
             var contactMessage = contactInfo.CustomerMessage;
 
             var apiKey = @"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";
-            var client = new SendGridClient(apiKey);
+            var webProxy = new WebProxy("http://winproxy.server.lan:3128/", true);
+            var client = new SendGridClient(webProxy, apiKey);
             var from = new EmailAddress(contactEmail, contactName);
             var subject = @"LEAD! Customer email";
 
