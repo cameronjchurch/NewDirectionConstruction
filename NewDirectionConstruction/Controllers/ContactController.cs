@@ -34,10 +34,12 @@ namespace NewDirectionConstruction.Controllers
             var contactEmail = contactInfo.CustomerEmail;
             var contactMessage = contactInfo.CustomerMessage;
 
+            _logger.LogInformation($"Sending email from: {contactName} email: {contactEmail} phone: {contactPhone} message: {contactMessage}");
+
             var apiKey = @"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";
             var webProxy = new WebProxy("http://winproxy.server.lan:3128/", true);
             var client = new SendGridClient(webProxy, apiKey);
-            var from = new EmailAddress(contactEmail, contactName);
+            var from = new EmailAddress("ndc.site@new-direction-construction.com");
             var subject = @"LEAD! Customer email";
 
             var to = new List<EmailAddress> { new EmailAddress("4xhelp@gmail.com"), new EmailAddress("cameron.j.church@gmail.com") };
@@ -45,10 +47,12 @@ namespace NewDirectionConstruction.Controllers
             //var to = new EmailAddress("4xhelp@gmail.com");
             //var to = new EmailAddress("cameron.j.church@gmail.com");
 
-            var htmlContent = $@"<p>{contactMessage}</p><b>Phone: {contactPhone}</b>";
+            var htmlContent = $@"<p>{contactMessage}</p><b>Name: {contactName}</b><br/><b>Email: {contactEmail}</b><br/><b>Phone: {contactPhone}</b>";
             var message = MailHelper.CreateSingleEmailToMultipleRecipients(from, to, subject, contactMessage, htmlContent);
 
             var response = await client.SendEmailAsync(message);
+
+            _logger.LogInformation($"Email sent statusCode: {response.StatusCode} headers: {response.Headers} body: {await response.Body.ReadAsStringAsync()}");
 
             return Ok();
         }
