@@ -8,6 +8,7 @@ const Contact = (props) => {
     } = props;
 
     const [modal, setModal] = useState(false);
+    const [isLoading, setLoading] = useState(false);
     const [customerName, setCustomerName] = useState("");
     const [customerPhone, setCustomerPhone] = useState("");
     const [customerEmail, setCustomerEmail] = useState("");
@@ -32,11 +33,18 @@ const Contact = (props) => {
     const toggle = () => setModal(!modal);
 
     const postContactInfo = async (e) => {
+        setLoading(true);
         e.preventDefault();
 
         await axios.post('api/contact', { customerName, customerPhone, customerEmail, customerMessage })
             .then((response) => {
                 toggle();
+                setLoading(false);
+                window.gtag('event', 'page_view', {
+                    page_location: 'https://new-direction-construction.com/api/contact',
+                    page_path: 'api/contact',
+                    page_title: 'ContactSent'
+                });
             });
     }
 
@@ -63,7 +71,7 @@ const Contact = (props) => {
                         <section style={{ color: "white" }}>Please let us know what you are interested in! For immediate inquires please call: <a href="tel:1-904-907-4474" style={{ color: "whitesmoke" }} ><b>904 907 4474</b></a></section>
                     </FormText>
                 </FormGroup>
-                <Button>Submit</Button>
+                <Button disabled={isLoading}>{isLoading ? 'Loading...' : 'Submit'}</Button>
             </Form>
             <Modal isOpen={modal} toggle={toggle} className={className}>
                 <ModalHeader toggle={toggle}>Thank You!</ModalHeader>
