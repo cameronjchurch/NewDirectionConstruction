@@ -30,8 +30,8 @@ namespace NewDirectionConstruction.Controllers
             _from = new EmailAddress("ndc.site@new-direction-construction.com");
 
             // Uncomment for Dev testing
-            //if (true)
-            //    _client = new SendGridClient(_apiKey);
+            if (true)
+                _client = new SendGridClient(_apiKey);
         }
 
         [HttpPost]

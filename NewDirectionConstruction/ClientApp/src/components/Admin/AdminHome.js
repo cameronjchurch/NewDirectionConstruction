@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 
-export class About extends Component {
+export class AdminHome extends Component {
     render() {
         return (
             <div>

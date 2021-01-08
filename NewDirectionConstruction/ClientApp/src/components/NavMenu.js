@@ -73,6 +73,9 @@ export class NavMenu extends Component {
                                             <NavItem>
                                                 <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/Gallery#Gallery" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Gallery</NavLink>
                                             </NavItem>
+                                            <NavItem>
+                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Admin" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Admin</NavLink>
+                                            </NavItem>
                                         </ul>
                                     </Collapse>
                                 </Container>
