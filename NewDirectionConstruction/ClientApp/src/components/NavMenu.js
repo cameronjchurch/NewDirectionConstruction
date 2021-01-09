@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import './NavMenu.css';
 import logo from '../images/logos11.png'
+import authService from './api-authorization/AuthorizeService';
 
 
 export class NavMenu extends Component {
@@ -15,8 +16,25 @@ export class NavMenu extends Component {
         this.toggleNavbar = this.toggleNavbar.bind(this);
         this.closeNavbar = this.closeNavbar.bind(this);
         this.state = {
-            collapsed: true
+            collapsed: true,
+            isAuthenticated: false
         };
+    }
+
+    componentDidMount() {
+        this._subscription = authService.subscribe(() => this.populateState());
+        this.populateState();
+    }
+
+    componentWillUnmount() {
+        authService.unsubscribe(this._subscription);
+    }
+
+    async populateState() {
+        const isAuthenticated = await authService.isAuthenticated();
+        this.setState({
+            isAuthenticated
+        });
     }
 
     toggleNavbar() {
@@ -32,6 +50,7 @@ export class NavMenu extends Component {
     }
 
     render() {
+        const { isAuthenticated } = this.state;
         return (
             <Container>
                 <Navbar className="navbar-expand-sm navbar-toggleable-sm box-shadow mb-3 header" dark fixed="top">
@@ -73,9 +92,11 @@ export class NavMenu extends Component {
                                             <NavItem>
                                                 <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Services/Gallery#Gallery" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Gallery</NavLink>
                                             </NavItem>
-                                            <NavItem>
-                                                <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Admin" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Admin</NavLink>
-                                            </NavItem>
+                                            {isAuthenticated &&  
+                                                <NavItem>
+                                                    <NavLink tag={HashLink} className="text-light" as={HashLink} to="/Admin" onClick={this.closeNavbar} scroll={el => { el.scrollIntoView(true); window.scrollBy(0, -190) }}>Admin</NavLink>
+                                                </NavItem>
+                                            }
                                         </ul>
                                     </Collapse>
                                 </Container>
