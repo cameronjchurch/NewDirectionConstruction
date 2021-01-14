@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NewDirectionConstruction.Data;
 using NewDirectionConstruction.Models;
+using NewDirectionConstruction.Models.Configuration;
 
 namespace NewDirectionConstruction
 {
@@ -45,6 +46,8 @@ namespace NewDirectionConstruction
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();
+
+            services.Configure<SendGridConfiguration>(Configuration.GetSection(SendGridConfiguration.EmailApi));
 
             services.AddControllersWithViews();
             services.AddRazorPages();

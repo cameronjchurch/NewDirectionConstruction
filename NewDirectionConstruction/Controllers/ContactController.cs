@@ -4,9 +4,12 @@ using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using NewDirectionConstruction.Data;
 using NewDirectionConstruction.Models;
+using NewDirectionConstruction.Models.Configuration;
 using Newtonsoft.Json;
 using SendGrid;
 using SendGrid.Helpers.Mail;
@@ -21,20 +24,26 @@ namespace NewDirectionConstruction.Controllers
         private readonly string _apiKey;
         private readonly WebProxy _webProxy;
         private readonly SendGridClient _client;
+        private readonly EmailAddress _to;
         private readonly EmailAddress _from;
         private readonly ContactInfoContext _context;
+        private readonly SendGridConfiguration _emailConfiguration;
+        private readonly string _ackTemplateId;
 
-        public ContactController(ILogger<ContactController> logger, ContactInfoContext context)
+        public ContactController(ILogger<ContactController> logger, ContactInfoContext context, IOptions<SendGridConfiguration> emailOptions, IConfiguration configuration)
         {
-            _logger = logger;
-            _apiKey = "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";
-            _webProxy = new WebProxy("http://winproxy.server.lan:3128/", true);
-            _client = new SendGridClient(_webProxy, _apiKey);
-            _from = new EmailAddress("ndc.site@new-direction-construction.com");
+            _logger = logger;                       
             _context = context;
+            _emailConfiguration = emailOptions.Value;
+            _apiKey = _emailConfiguration.ApiKey;
+            _to = new EmailAddress(_emailConfiguration.To);
+            _from = new EmailAddress(_emailConfiguration.Sender);
+            _ackTemplateId = _emailConfiguration.AckTemplateId;
+            _webProxy = new WebProxy(_emailConfiguration.WebProxy, true);
+            _client = new SendGridClient(_webProxy, _apiKey);
 
             // Uncomment for Dev testing
-            if (true)
+            if (configuration["Environment"].ToLower().Equals("dev"))
                 _client = new SendGridClient(_apiKey);
         }
 
@@ -75,14 +84,9 @@ namespace NewDirectionConstruction.Controllers
             
             var subject = @"LEAD! Customer email";
 
-            //var to = new List<EmailAddress> { new EmailAddress("4xhelp@gmail.com") };
-            var to = new List<EmailAddress> { new EmailAddress("cameron.j.church@gmail.com") };
-
-            //var to = new EmailAddress("4xhelp@gmail.com");
-            //var to = new EmailAddress("cameron.j.church@gmail.com");
-
             var htmlContent = $@"<p>{contactMessage}</p><b>Name: {contactName}</b><br/><b>Email: {contactEmail}</b><br/><b>Phone: {contactPhone}</b>";
-            var message = MailHelper.CreateSingleEmailToMultipleRecipients(_from, to, subject, contactMessage, htmlContent);
+
+            var message = MailHelper.CreateSingleEmail(_from, _to, subject, contactMessage, htmlContent);
 
             await SendMessageAsync(message);
 
@@ -113,7 +117,7 @@ namespace NewDirectionConstruction.Controllers
 
             message.AddTo(to);
             message.SetFrom(_from);
-            message.SetTemplateId("d-9577827f89be48c490a3e070ef1a1fec");
+            message.SetTemplateId(_ackTemplateId);
 
             var templateData = new TemplateData { Name = contactName };
             message.SetTemplateData(templateData);
