@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using NewDirectionConstruction.Data;
 using NewDirectionConstruction.Models;
-using SendGrid;
-using SendGrid.Helpers.Mail;
 
 namespace NewDirectionConstruction.Controllers
 {
@@ -24,15 +21,12 @@ namespace NewDirectionConstruction.Controllers
             _context = context;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Post(ContactInfo contactInfo)
-        {      
-            return Ok();
-        }
-
         [HttpGet]
         public async Task<IEnumerable<Ndclog>> Get()
         {
+            /*
+             * TODO Get top x number and paging
+             */
             IEnumerable<Ndclog> logEntries;
 
             logEntries = await _context.Ndclogs.ToListAsync();
