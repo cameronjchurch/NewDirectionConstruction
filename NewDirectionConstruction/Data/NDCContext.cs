@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using NewDirectionConstruction.Models;
 
 namespace NewDirectionConstruction.Data
@@ -14,10 +13,6 @@ namespace NewDirectionConstruction.Data
             : base(options)
         {
         }
-
-        //public NDCContext(DbContextOptions options) : base(options)
-        //{
-        //}
 
         public virtual DbSet<Ndclog> Ndclogs { get; set; }
 
