@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,11 +26,20 @@ namespace NewDirectionConstruction.Controllers
         public async Task<IEnumerable<Ndclog>> Get()
         {
             /*
-             * TODO Get top x number and paging
+             * TODO 
+             * Get top x number and paging             
              */
-            IEnumerable<Ndclog> logEntries;
 
-            logEntries = await _context.Ndclogs.ToListAsync();
+            IEnumerable<Ndclog> logEntries = null;
+
+            try
+            {
+                logEntries = await _context.Ndclogs.ToListAsync();
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError(exception, $"Failed reading NDCLog");
+            }
 
             return logEntries;
         }
