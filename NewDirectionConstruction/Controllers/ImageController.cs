@@ -26,16 +26,28 @@ namespace NewDirectionConstruction.Controllers
         [HttpGet]
         public async Task<IEnumerable<ImageInfo>> Get()
         {
-            /*
-             * TODO 
-             * Get top x number and paging             
-             */
-
             IEnumerable<ImageInfo> images = null;
 
             try
             {
-                images = await _context.Images.ToListAsync();
+                images = await _context.Images.AsNoTracking().ToListAsync();
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError(exception, $"Failed reading NDCLog");
+            }
+
+            return images;
+        }
+
+        [HttpGet("{page}")]
+        public async Task<IEnumerable<ImageInfo>> Get(int? page)
+        {
+            IEnumerable<ImageInfo> images = null;
+
+            try
+            {                
+                images = await PaginatedList<ImageInfo>.CreateAsync(_context.Images.AsNoTracking(), page ?? 1, 10);
             }
             catch (Exception exception)
             {

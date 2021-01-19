@@ -15,6 +15,7 @@ export class AdminHome extends Component {
         this.enterTitle = this.enterTitle.bind(this);
         this.toggleToast = this.toggleToast.bind(this);
         this.deleteFile = this.deleteFile.bind(this);
+        this.getNextLogs = this.getNextLogs.bind(this);
 
         this.state = {
             logMessages: undefined,
@@ -24,13 +25,21 @@ export class AdminHome extends Component {
             files: undefined,
             title: "",
             isUploading: false,
-            showToast: false
+            showToast: false,
+            pageNumber: 0
         }
     }
 
     async getLogs() {
         await axios.get('api/log').then((response) => {
             this.setState({ logMessages: response.data, showClear: true });
+        });
+    }
+
+    async getNextLogs() {
+        let pageNumber = this.state.pageNumber + 1;
+        await axios.get('api/log/' + pageNumber).then(response => {
+            this.setState({ logMessages: response.data, pageNumber: pageNumber });
         });
     }
 
@@ -97,7 +106,7 @@ export class AdminHome extends Component {
                         {logMessages.map((e) => <div>{e.id} | {e.logTime} | {e.level} | {e.message} | {e.exception} | {e.logger} | {e.stackTrace}</div>)}
                     </div>
                 }
-                <Button onClick={this.getLogs}>Get Logs</Button>
+                <Button onClick={this.getLogs}>Get Logs</Button> | <Button onClick={this.getNextLogs}>Get Next Logs</Button>
                 <h3>Contacts</h3>
                 {contacts &&
                     <div>

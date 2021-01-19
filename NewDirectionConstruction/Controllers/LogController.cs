@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -25,16 +26,28 @@ namespace NewDirectionConstruction.Controllers
         [HttpGet]
         public async Task<IEnumerable<Ndclog>> Get()
         {
-            /*
-             * TODO 
-             * Get top x number and paging             
-             */
-
             IEnumerable<Ndclog> logEntries = null;
 
             try
+            {                
+                logEntries = await _context.Ndclogs.OrderByDescending(l => l.LogTime).AsNoTracking().ToListAsync();
+            }
+            catch (Exception exception)
             {
-                logEntries = await _context.Ndclogs.ToListAsync();
+                _logger.LogError(exception, $"Failed reading NDCLog");
+            }
+
+            return logEntries;
+        }
+
+        [HttpGet("{page}")]
+        public async Task<IEnumerable<Ndclog>> Get(int? page)
+        {
+            IEnumerable<Ndclog> logEntries = null;
+
+            try
+            {              
+                logEntries = await PaginatedList<Ndclog>.CreateAsync(_context.Ndclogs.OrderByDescending(l => l.LogTime).AsNoTracking(), page ?? 1, 10);
             }
             catch (Exception exception)
             {
