@@ -6,9 +6,7 @@ const axios = require('axios').default;
 export class AdminHome extends Component {
     constructor(props) {
         super(props);
-
-        this.getLogs = this.getLogs.bind(this);
-        this.clearLogs = this.clearLogs.bind(this);
+        
         this.getContacts = this.getContacts.bind(this);
         this.getImages = this.getImages.bind(this);
         this.uploadFile = this.uploadFile.bind(this);
@@ -16,11 +14,8 @@ export class AdminHome extends Component {
         this.enterTitle = this.enterTitle.bind(this);
         this.toggleToast = this.toggleToast.bind(this);
         this.deleteFile = this.deleteFile.bind(this);
-        this.getNextLogs = this.getNextLogs.bind(this);
 
         this.state = {
-            logMessages: undefined,
-            showClear: false,
             contacts: undefined,
             images: undefined,
             files: undefined,
@@ -29,23 +24,6 @@ export class AdminHome extends Component {
             showToast: false,
             pageNumber: 0
         }
-    }
-
-    async getLogs() {
-        await axios.get('api/log').then((response) => {
-            this.setState({ logMessages: response.data, showClear: true });
-        });
-    }
-
-    async getNextLogs() {
-        let pageNumber = this.state.pageNumber + 1;
-        await axios.get('api/log/' + pageNumber).then(response => {
-            this.setState({ logMessages: response.data, pageNumber: pageNumber });
-        });
-    }
-
-    clearLogs() {
-        this.setState({ logMessages: undefined, showClear: false });
     }
 
     async getContacts() {
@@ -95,7 +73,7 @@ export class AdminHome extends Component {
     }
 
     render() {
-        const { logMessages, showClear, contacts, images, isUploading, showToast } = this.state;
+        const { contacts, images, isUploading, showToast } = this.state;
 
         return (
             <div>
