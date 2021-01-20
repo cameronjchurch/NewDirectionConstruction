@@ -1,22 +1,52 @@
-﻿import React, { Component } from 'react';
-import { Button, Col, Form, FormGroup, Label, Input, FomrText, Toast, ToastBody, ToastHeader } from 'reactstrap';
+﻿import React, { useState } from 'react';
+import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
+import classnames from 'classnames';
 import Contacts from './Contacts';
 import Images from './Images';
 import Logs from './Logs';
 
-export class AdminHome extends Component {
-    constructor(props) {
-        super(props);
-    }
+const AdminHome = (props) => {
 
-    render() {
-        return (
-            <div>
-                <h1>Admin Home</h1>
-                <Logs />
-                <Contacts />
-                <Images />
-            </div>
-        );
+    const [activeTab, setActiveTab] = useState('1');
+
+    const toggle = tab => {
+        if (activeTab !== tab)
+            setActiveTab(tab);
     }
+    return (
+        <div>
+            <h1>Admin Home</h1>
+            <Nav tabs>
+                <NavItem>
+                    <NavLink className={classnames({ active: activeTab === '1' })} onClick={() => { toggle('1'); }}>
+                        Contacts
+                        </NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink className={classnames({ active: activeTab === '2' })} onClick={() => { toggle('2'); }}>
+                        Images
+                    </NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink className={classnames({ active: activeTab === '3' })} onClick={() => { toggle('3'); }}>
+                        Logs
+                    </NavLink>
+                </NavItem>
+            </Nav>
+            <TabContent activeTab={activeTab}>
+                <TabPane tabId="1">
+                    <Contacts />
+                </TabPane>
+                <TabPane tabId="2">
+                    <Images />
+                </TabPane>
+                <TabPane tabId="3">
+                    <Logs />
+                </TabPane>
+            </TabContent>
+        </div>
+    );
+
 }
+
+export default AdminHome;

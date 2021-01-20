@@ -8,7 +8,7 @@ import { Gallery } from './components/Services/Gallery/Gallery';
 import AuthorizeRoute from './components/api-authorization/AuthorizeRoute';
 import ApiAuthorizationRoutes from './components/api-authorization/ApiAuthorizationRoutes';
 import { ApplicationPaths } from './components/api-authorization/ApiAuthorizationConstants';
-import { AdminHome } from './components/Admin/AdminHome'
+import AdminHome from './components/Admin/AdminHome';
 
 import { HomeUnderConstruction } from './components/HomeUnderConstruction';
 
