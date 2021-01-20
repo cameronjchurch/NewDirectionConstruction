@@ -21,7 +21,7 @@ const Logs = (props) => {
             setLogEntries(response.data);
             setShowClear(true);
         });
-    };
+    }
 
     const ActionButtons = () => {
         if (showClear) {

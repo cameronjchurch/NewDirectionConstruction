@@ -1,59 +1,28 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { Button } from 'reactstrap';
+const axios = require('axios').default;
 
-export class FetchData extends Component {
-  static displayName = FetchData.name;
+const Contacts = (props) => {
 
-  constructor(props) {
-    super(props);
-    this.state = { forecasts: [], loading: true };
-  }
-
-  componentDidMount() {
-    this.populateWeatherData();
-  }
-
-  static renderForecastsTable(forecasts) {
-    return (
-      <table className='table table-striped' aria-labelledby="tabelLabel">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-          </tr>
-        </thead>
-        <tbody>
-          {forecasts.map(forecast =>
-            <tr key={forecast.date}>
-              <td>{forecast.date}</td>
-              <td>{forecast.temperatureC}</td>
-              <td>{forecast.temperatureF}</td>
-              <td>{forecast.summary}</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-    );
-  }
-
-  render() {
-    let contents = this.state.loading
-      ? <p><em>Loading...</em></p>
-      : FetchData.renderForecastsTable(this.state.forecasts);
+    const [contacts, setContacts] = useState([]);
+    
+    const getContacts = async (e) => {
+        axios.get('api/contact').then(response => {
+            setContacts(response.data);
+        });
+    }
 
     return (
-      <div>
-        <h1 id="tabelLabel" >Weather forecast</h1>
-        <p>This component demonstrates fetching data from the server.</p>
-        {contents}
-      </div>
+        <div>
+            <h3>Contacts</h3>
+            {contacts &&
+                <div>
+                    {contacts.map((c) => <div>{c.id} | {c.dateSent} | {c.customerName} | {c.customerPhone} | {c.customerEmail} | {c.customerMessage}</div>)}
+                </div>
+            }
+            <Button onClick={getContacts}>Get Contacts</Button>
+        </div>
     );
-  }
-
-  async populateWeatherData() {
-    const response = await fetch('weatherforecast');
-    const data = await response.json();
-    this.setState({ forecasts: data, loading: false });
-  }
 }
+
+export default Contacts;

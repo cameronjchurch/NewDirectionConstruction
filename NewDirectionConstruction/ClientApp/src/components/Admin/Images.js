@@ -1,59 +1,89 @@
-import React, { Component } from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { Button, Col, Form, FormGroup, Label, Input, FomrText, Toast, ToastBody, ToastHeader } from 'reactstrap';
 
-export class FetchData extends Component {
-  static displayName = FetchData.name;
+const Images = (props) => {
 
-  constructor(props) {
-    super(props);
-    this.state = { forecasts: [], loading: true };
-  }
+    const [images, setImages] = useState([]);
+    const [files, setFiles] = useState([]);
+    const [title, setTitle] = useState('');
+    const [isUploading, setIsUploading] = useState(false);
+    const [showToast, setShowToast] = useState(false);
 
-  componentDidMount() {
-    this.populateWeatherData();
-  }
+    const getImages = async (e) => {
+        axios.get('api/image').then(response => {
+            setImages(response.data);
+        });
+    }
 
-  static renderForecastsTable(forecasts) {
+    const deleteImage = async (e) => {
+        axios.delete('api/image/' + e.target.id).then(response => { });
+    }
+
+    const uploadImage = async (e) => {
+        e.preventDefault();
+        setIsUploading(true);
+        let formData = new FormData();
+        formData.append("file", files[0]);
+        formData.append("title", title);
+
+        await axios.post('api/image', formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            }
+        }).then(response => {
+            setIsUploading(false);
+            setShowToast(true);
+        });
+    }
+
+    const handleTitleChange = ({ target: { value } }) => {
+        setTitle(value);
+    }
+
+    const handleFileSelect = ({ target: { files } }) => {
+        setFiles(files);
+    }
+
+    const toggleToast = () => {
+        setShowToast(false);
+    }
+
     return (
-      <table className='table table-striped' aria-labelledby="tabelLabel">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-          </tr>
-        </thead>
-        <tbody>
-          {forecasts.map(forecast =>
-            <tr key={forecast.date}>
-              <td>{forecast.date}</td>
-              <td>{forecast.temperatureC}</td>
-              <td>{forecast.temperatureF}</td>
-              <td>{forecast.summary}</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+        <div>
+            <h3>Images</h3>
+            {images &&
+                <div>
+                    {images.map((i) => <div>{i.id} | {i.title} | <img src={`data:image/jpeg;base64,${i.contents}`} /> | <Button onClick={deleteImage} id={i.id}>Delete</Button></div>)}
+                </div>
+            }
+            <Button onClick={getImages}>Get Images</Button>
+
+            <Form onSubmit={uploadImage}>
+                <FormGroup row>
+                    <Label for="title" sm={2}>Title</Label>
+                    <Col sm={10}>
+                        <Input type="text" name="title" id="title" onChange={handleTitleChange} placeholder="Image Title" />
+                    </Col>
+                </FormGroup>
+                <FormGroup row>
+                    <Label for="file" sm={2}>File</Label>
+                    <Col sm={10}>
+                        <Input type="file" name="file" id="file" onChange={handleFileSelect} />
+                    </Col>
+                </FormGroup>
+                <FormGroup check row>
+                    <Col sm={{ size: 10, offset: 2 }}>
+                        <Button disabled={isUploading}>{isUploading ? 'Loading...' : 'Submit'}</Button>
+                    </Col>
+                </FormGroup>
+                <Toast isOpen={showToast}>
+                    <ToastHeader toggle={toggleToast}>Image Upload</ToastHeader>
+                    <ToastBody>Upload Complete</ToastBody>
+                </Toast>
+            </Form>
+        </div>
     );
-  }
-
-  render() {
-    let contents = this.state.loading
-      ? <p><em>Loading...</em></p>
-      : FetchData.renderForecastsTable(this.state.forecasts);
-
-    return (
-      <div>
-        <h1 id="tabelLabel" >Weather forecast</h1>
-        <p>This component demonstrates fetching data from the server.</p>
-        {contents}
-      </div>
-    );
-  }
-
-  async populateWeatherData() {
-    const response = await fetch('weatherforecast');
-    const data = await response.json();
-    this.setState({ forecasts: data, loading: false });
-  }
 }
+
+export default Images;

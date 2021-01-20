@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -41,8 +42,7 @@ namespace NewDirectionConstruction.Controllers
             _ackTemplateId = _emailConfiguration.AckTemplateId;
             _webProxy = new WebProxy(_emailConfiguration.WebProxy, true);
             _client = new SendGridClient(_webProxy, _apiKey);
-
-            // Uncomment for Dev testing
+            
             if (configuration["Environment"].ToLower().Equals("dev"))
                 _client = new SendGridClient(_apiKey);
         }
@@ -54,7 +54,7 @@ namespace NewDirectionConstruction.Controllers
 
             try
             {
-                contacts = await _context.Contacts.ToListAsync();
+                contacts = await _context.Contacts.OrderByDescending(c => c.DateSent).AsNoTracking().ToListAsync();
             }
             catch (Exception exception)
             {
