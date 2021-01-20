@@ -37,7 +37,7 @@ const Contact = (props) => {
         e.preventDefault();
 
         await axios.post('api/contact', { customerName, customerPhone, customerEmail, customerMessage })
-            .then((response) => {
+            .then(response => {
                 toggle();
                 setLoading(false);
                 window.gtag('event', 'page_view', {

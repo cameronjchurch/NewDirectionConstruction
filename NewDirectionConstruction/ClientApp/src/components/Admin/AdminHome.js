@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { Button, Col, Form, FormGroup, Label, Input, FomrText, Toast, ToastBody, ToastHeader } from 'reactstrap';
+import Logs from './Logs'
 const axios = require('axios').default;
 
 export class AdminHome extends Component {
@@ -99,14 +100,7 @@ export class AdminHome extends Component {
         return (
             <div>
                 <h1>Admin Home</h1>
-                <h3>Logs</h3>
-                {showClear && <Button onClick={this.clearLogs}>Clear Logs</Button>}
-                {logMessages &&
-                    <div>
-                        {logMessages.map((e) => <div>{e.id} | {e.logTime} | {e.level} | {e.message} | {e.exception} | {e.logger} | {e.stackTrace}</div>)}
-                    </div>
-                }
-                <Button onClick={this.getLogs}>Get Logs</Button> | <Button onClick={this.getNextLogs}>Get Next Logs</Button>
+                <Logs />
                 <h3>Contacts</h3>
                 {contacts &&
                     <div>
@@ -137,7 +131,7 @@ export class AdminHome extends Component {
                         </Col>
                     </FormGroup>
                     <FormGroup check row>
-                        <Col sm={{ size: 10, offset: 2}}>
+                        <Col sm={{ size: 10, offset: 2 }}>
                             <Button disabled={isUploading}>{isUploading ? 'Loading...' : 'Submit'}</Button>
                         </Col>
                     </FormGroup>
