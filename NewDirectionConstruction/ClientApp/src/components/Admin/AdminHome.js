@@ -13,12 +13,13 @@ const AdminHome = (props) => {
         if (activeTab !== tab)
             setActiveTab(tab);
     }
+
     return (
         <div>
             <h1>Admin Home</h1>
             <Nav tabs>
                 <NavItem>
-                    <NavLink className={classnames({ active: activeTab === '1' })} onClick={() => { toggle('1'); }}>
+                    <NavLink className={classnames({ active: activeTab === '1' })} onClick={() => { toggle('1'); }} dark>
                         Contacts
                         </NavLink>
                 </NavItem>

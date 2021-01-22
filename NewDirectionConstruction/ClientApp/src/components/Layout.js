@@ -4,8 +4,7 @@ import { NavMenu } from './NavMenu';
 import Achievements from './Common/Achievements';
 import { LoginMenu } from './api-authorization/LoginMenu';
 
-export class Layout extends Component {
-    static displayName = Layout.name;
+export class Layout extends Component {   
 
     render() {
         return (
