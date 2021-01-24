@@ -9,26 +9,16 @@ import AuthorizeRoute from './components/api-authorization/AuthorizeRoute';
 import ApiAuthorizationRoutes from './components/api-authorization/ApiAuthorizationRoutes';
 import { ApplicationPaths } from './components/api-authorization/ApiAuthorizationConstants';
 import AdminHome from './components/Admin/AdminHome';
-
-import { HomeUnderConstruction } from './components/HomeUnderConstruction';
-
-import './custom.css'
 import withTracker from './withTracker';
 
-export default class App extends Component {
-    static displayName = App.name;
+import './custom.css'
 
+export default class App extends Component {    
     render() {
         return (
             <Layout>
                 <Switch>
-                    {
-                        //<Route exact path='/' component={withTracker(HomeUnderConstruction)} />
-                        //<Route exact path='/' component={withTracker(Home)} />
-                    }
-
                     <Route exact path='/' component={withTracker(Home)} />
-
                     <Route path='/Services/Windows' component={withTracker(Windows)} />
                     <Route path='/Services/Gallery' component={withTracker(Gallery)} />
                     <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes} />

@@ -6,10 +6,7 @@ import './NavMenu.css';
 import logo from '../images/logos11.png'
 import authService from './api-authorization/AuthorizeService';
 
-
-export class NavMenu extends Component {
-    static displayName = NavMenu.name;
-
+export class NavMenu extends Component {  
     constructor(props) {
         super(props);
 

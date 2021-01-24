@@ -1,6 +1,6 @@
-import axios from 'axios';
 import React, { useState } from 'react';
-import { Button, Col, Form, FormGroup, Label, Input, FomrText, Toast, ToastBody, ToastHeader } from 'reactstrap';
+import { Button, Col, Form, FormGroup, Label, Input, FormText, Toast, ToastBody, ToastHeader } from 'reactstrap';
+const axios = require('axios').default;
 
 const Images = (props) => {
 
@@ -71,6 +71,9 @@ const Images = (props) => {
                     <Col sm={10}>
                         <Input type="file" name="file" id="file" onChange={handleFileSelect} />
                     </Col>
+                    <FormText>
+                        <section style={{ color: "white" }}>Please upload a jpg image</section>
+                    </FormText>
                 </FormGroup>
                 <FormGroup check row>
                     <Col sm={{ size: 10, offset: 2 }}>
