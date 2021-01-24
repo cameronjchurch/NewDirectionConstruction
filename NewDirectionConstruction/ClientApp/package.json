@@ -19,7 +19,8 @@
     "react-router-hash-link-offset": "1.2.0",
     "react-scripts": "^3.4.4",
     "reactstrap": "8.6.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "react-table": "7.6.3"
   },
   "devDependencies": {
     "ajv": "^6.9.1",
