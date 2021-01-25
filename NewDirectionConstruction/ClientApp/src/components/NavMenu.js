@@ -54,7 +54,7 @@ export class NavMenu extends Component {
                     <Col>
                         <Row>
                             <Col sm="7" md="8">
-                                <NavbarBrand tag={Link} to="/"><img src={logo} width="30" height="30" />{' '}New Direction Construction</NavbarBrand>
+                                <NavbarBrand tag={Link} to="/"><img src={logo} width="30" height="30" alt="NDC" />{' '}New Direction Construction</NavbarBrand>
                             </Col>
                             <Col sm="5" md="4">
                                 <Row>

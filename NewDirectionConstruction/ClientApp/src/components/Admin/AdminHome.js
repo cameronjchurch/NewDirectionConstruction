@@ -19,7 +19,7 @@ const AdminHome = (props) => {
             <h1>Admin Home</h1>
             <Nav tabs>
                 <NavItem>
-                    <NavLink className={classnames({ active: activeTab === '1' })} onClick={() => { toggle('1'); }} dark>
+                    <NavLink className={classnames({ active: activeTab === '1' })} onClick={() => { toggle('1'); }}>
                         Contacts
                         </NavLink>
                 </NavItem>

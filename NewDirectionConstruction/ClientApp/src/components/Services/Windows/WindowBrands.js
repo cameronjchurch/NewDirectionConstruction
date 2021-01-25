@@ -39,7 +39,7 @@ export class WindowBrands extends Component {
                     <Row>
                         <Col xs="12" sm="6" md="3">                            
                             <div>
-                                <img src={pella} width="150" height="40" />
+                                <img src={pella} width="150" height="40" alt="Pella" />
                             </div>
                             <ListGroup flush>
                                 <ListGroupItem tag="a" href={pellaEncompass} target="_blank">Encompass</ListGroupItem>
@@ -49,7 +49,7 @@ export class WindowBrands extends Component {
                         </Col>
                         <Col xs="12" sm="6" md="3">                            
                             <div>
-                                <img src={simonton} width="150" height="40" />
+                                <img src={simonton} width="150" height="40" alt="Simonton" />
                             </div>
                             <ListGroup flush>
                                 <ListGroupItem tag="a" href={simontonPro} target="_blank">Pro Series</ListGroupItem>
@@ -60,7 +60,7 @@ export class WindowBrands extends Component {
                         </Col>
                         <Col xs="12" sm="6" md="3">                            
                             <div>
-                                <img src={cws} width="150" height="40" />
+                                <img src={cws} width="150" height="40" alt="CWS" />
                             </div>
                             <ListGroup flush>
                                 <ListGroupItem tag="a" href={cws610} target="_blank">610 Series</ListGroupItem>
@@ -70,7 +70,7 @@ export class WindowBrands extends Component {
                         </Col>
                         <Col xs="12" sm="6" md="3">                            
                             <div>
-                                <img src={wincore} width="150" height="40" />
+                                <img src={wincore} width="150" height="40" alt="Wincore" />
                             </div>
                             <ListGroup flush>
                                 <ListGroupItem tag="a" href={wincore400} target="_blank">400 Series</ListGroupItem>

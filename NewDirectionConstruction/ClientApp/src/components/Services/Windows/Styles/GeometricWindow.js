@@ -10,7 +10,7 @@ const GeometricWindow = (props) => {
     return (
         <div id="geometricWindow" className="pointer">
             <h4>Geometric Windows</h4>
-            <img src={geometricWindow} width="150" height="150" />
+            <img src={geometricWindow} width="150" height="150" alt="GeometricWindow" />
             <Popover placement="bottom" isOpen={popoverOpen} target="geometricWindow" toggle={toggle}>
                 <PopoverHeader>GEOMETRIC WINDOWS</PopoverHeader>
                 <PopoverBody>

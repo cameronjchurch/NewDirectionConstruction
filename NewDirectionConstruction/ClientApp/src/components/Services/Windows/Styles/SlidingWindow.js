@@ -10,7 +10,7 @@ const SlidingWindow = (props) => {
     return (
         <div id="sliderWindow" className="pointer">
             <h4>Sliding Windows</h4>
-            <img src={sliderWindow} width="150" height="150" />
+            <img src={sliderWindow} width="150" height="150" alt="SlidingWindow" />
             <Popover placement="bottom" isOpen={popoverOpen} target="sliderWindow" toggle={toggle}>
                 <PopoverHeader>SLIDING WINDOWS</PopoverHeader>
                 <PopoverBody>

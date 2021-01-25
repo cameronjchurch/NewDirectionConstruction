@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Col, Form, FormGroup, Label, Input, FormText, Toast, ToastBody, ToastHeader, Card, CardTitle } from 'reactstrap';
+import { Button, Col, Form, FormGroup, Label, Input, FormText, Card, CardTitle } from 'reactstrap';
 import NdcTable from '../Common/NdcTable';
 const axios = require('axios').default;
 
@@ -9,17 +9,17 @@ const Images = (props) => {
     const [files, setFiles] = useState([]);
     const [title, setTitle] = useState('');
     const [isUploading, setIsUploading] = useState(false);
-    const [showToast, setShowToast] = useState(false);
-
-    const getImages = async (e) => {
+    
+    const getImages = async (e) => {        
         axios.get('api/image').then(response => {
             setImages(response.data);
         });
     }
 
-    const deleteImage = async (e) => {
+    const deleteImage = React.useCallback(async (e) => {
+        e.preventDefault();
         axios.delete('api/image/' + e.target.id).then(response => { getImages(); });
-    }
+    }, [])
 
     const uploadImage = async (e) => {
         e.preventDefault();
@@ -34,8 +34,7 @@ const Images = (props) => {
             }
         }).then(response => {
             getImages();
-            setIsUploading(false);
-            setShowToast(true);
+            setIsUploading(false);            
         });
     }
 
@@ -47,24 +46,20 @@ const Images = (props) => {
         setFiles(files);
     }
 
-    const toggleToast = () => {
-        setShowToast(false);
-    }
-
     const columns = React.useMemo(() => [
         { Header: 'Id', accessor: 'id' },
         { Header: 'Title', accessor: 'title' },
         {
             Header: 'Image',
             accessor: 'contents',
-            Cell: ({ cell }) => (<img src={`data:image/jpeg;base64,${cell.row.values.contents}`} />)
+            Cell: ({ cell }) => (<img src={`data:image/jpeg;base64,${cell.row.values.contents}`} alt={cell.row.values.id} />)
         },
         {
             Header: 'Delete',
             accessor: 'delete',
             Cell: ({ cell }) => (<Button onClick={deleteImage} id={cell.row.values.id}>Delete</Button>)
         }
-    ], []);
+    ], [deleteImage]);
 
     return (
         <div>
@@ -95,10 +90,6 @@ const Images = (props) => {
                                 <Button disabled={isUploading}>{isUploading ? 'Loading...' : 'Submit'}</Button>
                             </Col>
                         </FormGroup>
-                        <Toast isOpen={showToast}>
-                            <ToastHeader toggle={toggleToast}>Image Upload</ToastHeader>
-                            <ToastBody>Upload Complete</ToastBody>
-                        </Toast>
                     </Form>
                 </div>
             </Card>
