@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
+import NdcTable from '../Common/NdcTable';
 const axios = require('axios').default;
 
 const Contacts = (props) => {
 
     const [contacts, setContacts] = useState([]);
-    
+
+    const columns = React.useMemo(() => [
+        { Header: 'Id', accessor: 'id' },
+        { Header: 'Time', accessor: 'dateSent' },
+        { Header: 'Name', accessor: 'customerName' },
+        { Header: 'Phone', accessor: 'customerPhone' },
+        { Header: 'Email', accessor: 'customerEmail' },
+        { Header: 'Message', accessor: 'customerMessage' }
+    ], []);
+
     const getContacts = async (e) => {
         axios.get('api/contact').then(response => {
             setContacts(response.data);
@@ -15,11 +25,7 @@ const Contacts = (props) => {
     return (
         <div>
             <h3>Contacts</h3>
-            {contacts &&
-                <div>
-                    {contacts.map((c) => <div>{c.id} | {c.dateSent} | {c.customerName} | {c.customerPhone} | {c.customerEmail} | {c.customerMessage}</div>)}
-                </div>
-            }
+            <NdcTable columns={columns} data={contacts} />
             <Button onClick={getContacts}>Get Contacts</Button>
         </div>
     );
