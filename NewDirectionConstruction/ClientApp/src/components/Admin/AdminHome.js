@@ -16,7 +16,7 @@ const AdminHome = (props) => {
 
     return (
         <div>
-            <h1>Admin Home</h1>
+            <h1>Admin</h1>
             <Nav tabs>
                 <NavItem>
                     <NavLink className={classnames({ active: activeTab === '1' })} onClick={() => { toggle('1'); }} style={{ color: "Grey" }}>
