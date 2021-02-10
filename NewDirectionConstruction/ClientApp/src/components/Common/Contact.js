@@ -1,4 +1,5 @@
 ﻿import React, { useState } from 'react';
+import { AvForm, AvGroup, AvInput, AvFeedback } from 'availity-reactstrap-validation';
 import { Button, Form, FormGroup, Label, Input, FormText, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { ApiPaths } from './ApiPaths';
 const axios = require('axios').default;
@@ -52,28 +53,32 @@ const Contact = (props) => {
     return (
         <div style={{ backgroundColor: "#808080", opacity: "0.9", padding: "17px", borderRadius: "17px", marginTop: "31px" }}>
             <h3 style={{ color: "white" }}>Please Tells Us About Your Needs</h3>
-            <Form onSubmit={postContactInfo}>
-                <FormGroup>
+            <AvForm onSubmit={postContactInfo}>
+                <AvGroup>
                     <Label style={{ color: "white" }} for="customerName">Name</Label>
-                    <Input type="text" name="customerName" id="customerName" placeholder="Name" value={customerName} onChange={handleCustomerNameChange} />
-                </FormGroup>
-                <FormGroup>
+                    <AvInput type="text" name="customerName" id="customerName" placeholder="Name" value={customerName} onChange={handleCustomerNameChange} required />
+                    <AvFeedback>Name is required</AvFeedback>
+                </AvGroup>
+                <AvGroup>
                     <Label style={{ color: "white" }} for="customerPhone">Phone Number</Label>
-                    <Input type="tel" name="customerPhone" id="customerPhone" placeholder="Phone" value={customerPhone} onChange={handleCustomerPhoneChange} />
-                </FormGroup>
-                <FormGroup>
+                    <AvInput type="tel" name="customerPhone" id="customerPhone" placeholder="Phone" value={customerPhone} onChange={handleCustomerPhoneChange} required />
+                    <AvFeedback>Please enter a valid phone number</AvFeedback>
+                </AvGroup>
+                <AvGroup>
                     <Label style={{ color: "white" }} for="customerEmail">Email</Label>
-                    <Input type="email" name="customerEmail" id="customerEmail" placeholder="Email" value={customerEmail} onChange={handleCustomerEmailChange} />
-                </FormGroup>
-                <FormGroup>
+                    <AvInput type="email" name="customerEmail" id="customerEmail" placeholder="Email" value={customerEmail} onChange={handleCustomerEmailChange} required />
+                    <AvFeedback>Please enter a valid email</AvFeedback>
+                </AvGroup>
+                <AvGroup>
                     <Label style={{ color: "white" }} for="customerConcern">Message</Label>
-                    <Input type="textarea" name="customerMessage" id="customerMessage" placeholder="Message" value={customerMessage} onChange={handleCustomerMessageChange} />
+                    <AvInput type="textarea" name="customerMessage" id="customerMessage" placeholder="Message" value={customerMessage} onChange={handleCustomerMessageChange} required />
+                    <AvFeedback>Message is required</AvFeedback>
                     <FormText>
                         <section style={{ color: "white" }}>Please let us know what you are interested in! For immediate inquires please call: <a href="tel:1-904-907-4474" style={{ color: "whitesmoke" }} ><b>904 907 4474</b></a></section>
                     </FormText>
-                </FormGroup>
+                </AvGroup>
                 <Button disabled={isLoading}>{isLoading ? 'Loading...' : 'Submit'}</Button>
-            </Form>
+            </AvForm>
             <Modal isOpen={modal} toggle={toggle} className={className}>
                 <ModalHeader toggle={toggle}>Thank You!</ModalHeader>
                 <ModalBody>

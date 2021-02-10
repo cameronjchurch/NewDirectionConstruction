@@ -20,7 +20,8 @@
     "react-scripts": "^3.4.4",
     "reactstrap": "8.6.0",
     "rimraf": "^3.0.2",
-    "react-table": "7.6.3"
+    "react-table": "7.6.3",
+    "availity-reactstrap-validation": "2.7.0"
   },
   "devDependencies": {
     "ajv": "^6.9.1",
