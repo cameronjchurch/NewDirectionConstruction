@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
 import NdcTable from '../Common/NdcTable';
+import { ApiPaths } from '../Common/ApiPaths';
 const axios = require('axios').default;
 
 const Contacts = (props) => {
@@ -17,7 +18,7 @@ const Contacts = (props) => {
     ], []);
 
     const getContacts = async (e) => {
-        axios.get('api/contact').then(response => {
+        axios.get(ApiPaths.GetContact).then(response => {
             setContacts(response.data);
         });
     }

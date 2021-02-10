@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Col, Form, FormGroup, Label, Input, FormText, Card, CardTitle } from 'reactstrap';
 import NdcTable from '../Common/NdcTable';
+import { ApiPaths } from '../Common/ApiPaths';
 const axios = require('axios').default;
 
 const Images = (props) => {
@@ -10,15 +11,15 @@ const Images = (props) => {
     const [title, setTitle] = useState('');
     const [isUploading, setIsUploading] = useState(false);
     
-    const getImages = async (e) => {        
-        axios.get('api/image').then(response => {
+    const getImages = async (e) => {
+        axios.get(ApiPaths.GetImage).then(response => {
             setImages(response.data);
         });
     }
 
     const deleteImage = React.useCallback(async (e) => {
         e.preventDefault();
-        axios.delete('api/image/' + e.target.id).then(response => { getImages(); });
+        axios.delete(ApiPaths.DeletImage + e.target.id).then(response => { getImages(); });
     }, [])
 
     const uploadImage = async (e) => {
@@ -28,7 +29,7 @@ const Images = (props) => {
         formData.append("file", files[0]);
         formData.append("title", title);
 
-        await axios.post('api/image', formData, {
+        await axios.post(ApiPaths.PostImage, formData, {
             headers: {
                 "Content-Type": "multipart/form-data",
             }

@@ -1,5 +1,6 @@
 ﻿import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { ApiPaths } from './ApiPaths';
 const axios = require('axios').default;
 
 const Contact = (props) => {
@@ -36,13 +37,13 @@ const Contact = (props) => {
         setLoading(true);
         e.preventDefault();
 
-        await axios.post('api/contact', { customerName, customerPhone, customerEmail, customerMessage })
+        await axios.post(ApiPaths.PostContact, { customerName, customerPhone, customerEmail, customerMessage })
             .then(response => {
                 toggle();
                 setLoading(false);
                 window.gtag('event', 'page_view', {
                     page_location: 'https://new-direction-construction.com/api/contact',
-                    page_path: 'api/contact',
+                    page_path: ApiPaths.PostContact,
                     page_title: 'ContactSent'
                 });
             });

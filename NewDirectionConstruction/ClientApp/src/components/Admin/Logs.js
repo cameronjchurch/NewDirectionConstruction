@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
 import NdcTable from '../Common/NdcTable';
+import { ApiPaths } from '../Common/ApiPaths';
 const axios = require('axios').default;
 
 const Logs = (props) => {
@@ -28,7 +29,7 @@ const Logs = (props) => {
     const getLogs = async (e) => {
         let page = pageNumber + 1;
         setPageNumber(page);
-        axios.get('api/log/' + page).then(response => {
+        axios.get(ApiPaths.GetLog + page).then(response => {
             setLogMessages(response.data);
             setShowClear(true);
         });

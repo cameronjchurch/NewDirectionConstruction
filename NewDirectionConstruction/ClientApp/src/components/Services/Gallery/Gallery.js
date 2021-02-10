@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Spinner } from 'reactstrap';
 import Images from './Images';
 import Contact from '../../Common/Contact';
+import { ApiPaths } from '../../Common/ApiPaths';
 const axios = require('axios').default;
 
 export class Gallery extends Component {
@@ -18,7 +19,7 @@ export class Gallery extends Component {
         document.title = 'Gallery';
         this.setState({ loading: true });
 
-        axios.get('api/image').then((response) => {
+        axios.get(ApiPaths.GetImage).then((response) => {
             this.setState({ images: response.data, loading: false });
         });
     }
